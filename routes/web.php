@@ -19,8 +19,48 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-//Route::get('/user', 'UserController@index');
 
-Route::get('user/{id}', 'UserController@show');
+Route::get('user/{id}', function ($id){
+    return 'User '.$id;
+    return 'User '.$name;
+    
+});
+
+//--------------------profile -----------------------------
+Route::get('user/profile', 'UserProfileController@show')->name('profile');
+
+$url = route('profile');
+
+// Generating Redirects...
+return redirect()->route('profile');
+
+
+Route::get('user/profile', function () {
+    //
+})->name('profile');
+
+
+Route::get('user/{id}/profile', function ($id) {
+    //
+})->name('profile');
+
+$url = route('profile', ['id' => 1]);
+
+
 
 Route::get('foo', 'Photos\AdminController@method');
+
+Route::get('users', function()
+{
+
+  $users = User::all();
+  return View::make('users')->with('users', $users);
+});
+
+
+Route::get('articles', function()
+{
+
+  $articles = articles::all();
+  return View::make('articles')->with('articles', $articles);
+});
