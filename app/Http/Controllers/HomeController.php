@@ -26,3 +26,9 @@ class HomeController extends Controller
         return view('home');
     }
 }
+//  -----------------  my code here  --------
+
+    
+//   -------------------- end of  my code
+    
+

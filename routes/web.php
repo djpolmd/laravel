@@ -27,26 +27,6 @@ Route::get('user/{id}', function ($id){
 });
 
 //--------------------profile -----------------------------
-Route::get('user/profile', 'UserProfileController@show')->name('profile');
-
-$url = route('profile');
-
-// Generating Redirects...
-return redirect()->route('profile');
-
-
-Route::get('user/profile', function () {
-    //
-})->name('profile');
-
-
-Route::get('user/{id}/profile', function ($id) {
-    //
-})->name('profile');
-
-$url = route('profile', ['id' => 1]);
-
-
 
 Route::get('foo', 'Photos\AdminController@method');
 

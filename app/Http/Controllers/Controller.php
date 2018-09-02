@@ -12,6 +12,9 @@ class Controller extends BaseController
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 }
 
+//-------------------  My code  ---------------------
+
+
 class UserController extends Controller
 {
     /**
