@@ -1,43 +1,29 @@
-<?php namespace App;
+<?php
 
-use Carbon\Carbon;
-use Illuminate\Database\Eloquent\Model;
+namespace App;
 
-class Article extends Model {
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
+class article extends Authenticatable
+{
+    use Notifiable;
+
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
     protected $fillable = [
-        'title',
-        'body',
-        'published_at',
-        'user_id', // Temporary
+        'name', 'email', 'password',
     ];
 
-   protected $dates = ['published_at']; // Treat all dates as instances of Carbon
-
-
-    public function scopePublished($query)
-    {
-
-        $query->where('published_at', '<=', Carbon::now());
-
-    }
-
-    public function scopeUnpublished($query)
-    {
-
-        $query->where('published_at', '>', Carbon::now());
-
-    }
-
-    // setNameAttribute - Naming Convention
-
-    public function setPublishedAtAttribute($date)
-    {
-
-        $this->attributes['published_at'] = Carbon::createFromFormat('Y-m-d', $date);
-
-       // $this->attributes['published_at'] = Carbon::parse($date);  // Set date at midnight
-
-
-    }
+    /**
+     * The attributes that should be hidden for arrays.
+     *
+     * @var array
+     */
+    protected $hidden = [
+        'password', 'remember_token',
+    ];
 }
