@@ -26,21 +26,15 @@ Route::get('user/{id}', function ($id){
     
 });
 
-//--------------------profile -----------------------------
+//--------------------Articles -----------------------------
+Route::resource('articles', 'ArticlesController');
 
-Route::get('foo', 'Photos\AdminController@method');
-
-Route::get('users', function()
-{
-
-  $users = User::all();
-  return View::make('users')->with('users', $users);
-});
-
-
-Route::get('articles', function()
+/*Route::get('articles', function()
 {
 
   $articles = articles::all();
   return View::make('articles')->with('articles', $articles);
 });
+
+*/
+

@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Articles test page</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
@@ -79,15 +79,17 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Articles test page
                 </div>
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                    
+                    <a href="https://laravel-djpolmd.c9users.io/articles/add">Adaugare articol</a>
+                    <a href="https://laravel-djpolmd.c9users.io/articles/edit">Editare articol</a>
+                   
+                    <a href="https://laravel-djpolmd.c9users.io/articles/update/">Modificare articol</a>
+                    <a href="https://laravel-djpolmd.c9users.io/articles">Vizualiare articole (lista)</a>
+                    <a href="https://laravel-djpolmd.c9users.io/articles/id_search">Vizualizare articol cu toate detaliile articolului</a>
                 </div>
             </div>
         </div>
