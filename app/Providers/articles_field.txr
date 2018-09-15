@@ -1,0 +1,14 @@
++-------------------------+------------------+------+-----+---------+----------------+
+| Field                   | Type             | Null | Key | Default | Extra          |
++-------------------------+------------------+------+-----+---------+----------------+
+| articol_id              | int(10) unsigned | NO   | PRI | NULL    | auto_increment |
+| title                   | varchar(100)     | NO   |     | NULL    |                |
+| description             | text             | NO   |     | NULL    |                |
+| image                   | varchar(255)     | NO   |     | NULL    |                |
+| text                    | text             | NO   |     | NULL    |                |
+| send_to_admin_email     | tinyint(1)       | NO   |     | NULL    |                |
+| was_sent_to_admin_email | tinyint(1)       | NO   |     | NULL    |                |
+| user_id                 | int(11)          | NO   |     | NULL    |                |
+| created_at              | datetime         | NO   |     | NULL    |                |
+| updated_at              | datetime         | NO   |     | NULL    |                |
++-------------------------+------------------+------+-----+---------+----------------+
