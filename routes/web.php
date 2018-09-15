@@ -34,9 +34,12 @@ Route::get('app', 'PageController@app');
 
 Route::get('/articles', function(){
 
-	$articles = DB::table('articles')->get();
+	$articol = DB::table('articles')->get();
 
-	return view('article.articles', compact($articles));
+
+   
+
+	return view('article.articles', compact('articol')); //variable without $ needed just in '';
 
 });
 
