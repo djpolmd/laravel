@@ -31,11 +31,13 @@ Route::get('add', 'HomeController@add');
 Route::get('app', 'PageController@app');
 //--------------------Articles -----------------------------
 
-Route::get('articles', function(){
 
-	$art = DB::table('articles')->get();
+Route::get('/articles', function(){
 
-	return view('articles', compact($art));
+	$articles = DB::table('articles')->get();
+
+	return view('article.articles', compact($articles));
+
 });
 
 /*Route::get('articles', function()
