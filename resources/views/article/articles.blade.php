@@ -20,7 +20,7 @@
 					<CAPTION><EM>E un test model cu celule model</EM></CAPTION>
 					<TR><TH rowspan="2"><TH colspan="2">Descrierea gen a articolelor
   				 	<TH rowspan="2">Titlu<BR>Descrierea
-					<TR><TH>text<TH>weight
+					<TR><TH>text<TH>Imagine
 				@foreach ($articol as $art)
 					<TR><TH>{{$art->title}}<TD>{{$art->description}}<TD>{!!Html::Image('storage/img/'.$art->image)!!}<TD>{{$art->text}}
 						<TD>  <TD> 
@@ -42,7 +42,7 @@
 				@endforeach
 
 		@else
-		   <script>window.location = "/dashboard";</script>
+		   <script>window.location = "/login";</script>  {{-- For more secure it ca be changed to --}}
 		@endif
 		<script type="text/javascript"></script>
 	</body>

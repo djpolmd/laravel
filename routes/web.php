@@ -28,22 +28,17 @@ Route::get('user/{id}', function ($id){
     
 });
 
-Route::get('create', 'PageController@create');
+
 Route::get('add', 'HomeController@add');
 Route::get('app', 'PageController@app');
+
 //--------------------Articles -----------------------------
 
 
-Route::get('/articles', function(){
+Route::get('/articles', 'ArticlesController@show_all');
 
-	$articol = DB::table('articles')->get();
+Route::get('/articles/{id}','ArticlesController@index');
 
-
-   
-
-	return view('article.articles', compact('articol')); //variable without $ needed just in '';
-
-});
 
 /*Route::get('articles', function()
 {
@@ -53,4 +48,4 @@ Route::get('/articles', function(){
 });
 
 */
-
+?>

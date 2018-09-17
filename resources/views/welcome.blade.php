@@ -84,12 +84,14 @@
 
 				<div class="links">
 					
-					<a href="/add">Adaugare articol</a>
-					<a href="/edit">Editare articol</a>
-				   
-					<a href="/update/">Modificare articol</a>
-					<a href="/articles">Vizualiare articole (lista)</a>
-					<a href="/articles/id_search">Vizualizare articol cu toate detaliile articolului</a>
+					<li><a href="/add">Adaugare articol</a></li><br>
+					<li><a href="/edit">Editare articol</a></li><br>
+				   	<li><a href="/update/">Modificare articol</a></li><br>
+					<li><a href="/articles">Vizualiare articole (lista)</a>
+					</li><br>
+					<li>
+					<a href="/articles/id_search">Vizualizare unui articol {ID}</a>
+					</li><br>
 				</div>
 				<div> ... </div>
 				<div class="links"> <a href="/users">Lista  de utilizatori -> </a> </div>
