@@ -11,23 +11,39 @@
 		<style type="text/css"></style>
 	</head>
 	<body>
+		@if (Auth::check()) 		
 			<ul>
+				Curent User is :  {{auth()->user()->name}}
+				
+				<TABLE border="1"
+       			   summary="Tabelul cu articole">
+					<CAPTION><EM>E un test model cu celule model</EM></CAPTION>
+					<TR><TH rowspan="2"><TH colspan="2">Descrierea gen a articolelor
+  				 	<TH rowspan="2">Titlu<BR>Descrierea
+					<TR><TH>text<TH>weight
+				@foreach ($articol as $art)
+					<TR><TH>{{$art->title}}<TD>{{$art->description}}<TD>{!!Html::Image('storage/img/'.$art->image)!!}<TD>{{$art->text}}
+						<TD>  <TD> 
+					
+				@endforeach				
+				</TABLE>
+
 				@foreach ($articol as $art)
 				
-				<li>  {{$art->title}}  
+				<li>   {{$art->title}}  
 					/  {{$art->description}}
-					/   
-					<img src="{{URL::asset('storage/img/gun.jpeg', 'alt text', array('class' => 'css-class')) }}"> 
-					</img>
 					/
-					{!!Html::Image('storage/img/'.$art->image)!!}
+						{!!Html::Image('storage/img/'.$art->image)!!}
 
-					/ {{$art->image}}
+					/ 
 					/ {{$art->text}}
 				</li>
 				
 				@endforeach
-		
+
+		@else
+		   <script>window.location = "/dashboard";</script>
+		@endif
 		<script type="text/javascript"></script>
 	</body>
 </html>
