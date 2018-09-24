@@ -30,13 +30,12 @@ Route::get('user/{id}', function ($id){
 
 
 Route::get('add', 'HomeController@add');
-Route::get('app', 'PageController@app');
+Route::get('app', 'ArticlesController@add');
 
 //--------------------Articles -----------------------------
 
 
 Route::get('/articles', 'ArticlesController@show_all');
-
 Route::get('/articles/{id}','ArticlesController@index');
 
 

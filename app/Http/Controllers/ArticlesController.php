@@ -1,7 +1,7 @@
 <?php 
 
 namespace App\Http\Controllers;
-use app\article;
+use App\Article;
 use app\Http\Requests;
 use app\Http\Requests\ArticleRequest;
 use Illuminate\Http\Request;
@@ -15,6 +15,10 @@ use App\Quotation;
 class ArticlesController extends Controller {
 
   
+    public function add()
+    {
+        return view('aticle.create');
+    }
 
     public function show_all()
     {
@@ -23,9 +27,11 @@ class ArticlesController extends Controller {
     return view('article.articles', compact('articol')); //variable without $ needed just in '';
 
     }
-    public function index($id)
+
+    // cautam articol dupa id
+    public function index($articol_id )
     {
-        $article = Artcle::find($id);
+        $article = Article::find($articol_id);
 
         return $article;
     }

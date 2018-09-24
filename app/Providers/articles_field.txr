@@ -1,14 +1,25 @@
-+-------------------------+------------------+------+-----+---------+----------------+
-| Field                   | Type             | Null | Key | Default | Extra          |
-+-------------------------+------------------+------+-----+---------+----------------+
-| articol_id              | int(10) unsigned | NO   | PRI | NULL    | auto_increment |
-| title                   | varchar(100)     | NO   |     | NULL    |                |
-| description             | text             | NO   |     | NULL    |                |
-| image                   | varchar(255)     | NO   |     | NULL    |                |
-| text                    | text             | NO   |     | NULL    |                |
-| send_to_admin_email     | tinyint(1)       | NO   |     | NULL    |                |
-| was_sent_to_admin_email | tinyint(1)       | NO   |     | NULL    |                |
-| user_id                 | int(11)          | NO   |     | NULL    |                |
-| created_at              | datetime         | NO   |     | NULL    |                |
-| updated_at              | datetime         | NO   |     | NULL    |                |
-+-------------------------+------------------+------+-----+---------+----------------+
++-------------------------+--------------+------+-----+---------+----------------+
+| Field                   | Type         | Null | Key | Default | Extra          |
++-------------------------+--------------+------+-----+---------+----------------+
+| id                      | int(4)       | NO   | PRI | NULL    | auto_increment |
+| title                   | varchar(100) | NO   |     | NULL    |                |
+| description             | text         | NO   |     | NULL    |                |
+| image                   | varchar(255) | NO   |     | NULL    |                |
+| text                    | text         | NO   |     | NULL    |                |
+| send_to_admin_email     | tinyint(1)   | NO   |     | NULL    |                |
+| was_sent_to_admin_email | tinyint(1)   | NO   |     | NULL    |                |
+| user_id                 | int(11)      | NO   |     | NULL    |                |
+| created_at              | datetime     | NO   |     | NULL    |                |
+| updated_at              | datetime     | NO   |     | NULL    |                |
++-------------------------+--------------+------+-----+---------+----------------+
+
+
+INSERT INTO articles(articol_id,title ,description, image, text ,send_to_admin_email, was_sent_to_admin_email, user_id, created_at, updated_at)
+VALUES (null, 'lampa','lampa un corp de iluinat', 'lampa.jpg', 'loreipsum was_sent_to_admin_email',1,0,0001,now(),now());
+
+ALTER TABLE articles CHANGE  articol_id  article.id INT(4) NOT NULL AUTO_INCREMENT;
+
+SHOW COLUMnS FROM articles;
+
+
+$article = App\Article::create(['title' => 'gun', 'description' => 'Its small gun','image' => 'gun.jpg','text' => 'some about gun', 'send_to_admin_email' => 1, 'was_sent_to_admin_email' => 0, 'user_id' => 0,'updated_at' => Carbon\Carbon::now()])

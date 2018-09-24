@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>laravel</title>
+		<title>Demo</title>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	    <meta name="description" content="Demo project">
@@ -10,8 +10,15 @@
 		<style type="text/css"></style>
 	</head>
 	<body>
-		<H1>
-		<p>Let the game Add article!</p>
+		<p>Let the game begin!</p>
+
+		<H2>Create new Article</H2>
+		{!! Form::open() !!}
+
+		{!! Form::close() !!}
 		<script type="text/javascript"></script>
 	</body>
 </html>
+@section('content')
+<H1></H1>
+@stop

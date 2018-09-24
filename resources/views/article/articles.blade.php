@@ -28,18 +28,7 @@
 				@endforeach				
 				</TABLE>
 
-				@foreach ($articol as $art)
 				
-				<li>   {{$art->title}}  
-					/  {{$art->description}}
-					/
-						{!!Html::Image('storage/img/'.$art->image)!!}
-
-					/ 
-					/ {{$art->text}}
-				</li>
-				
-				@endforeach
 
 		@else
 		   <script>window.location = "/login";</script>  {{-- For more secure it ca be changed to --}}
