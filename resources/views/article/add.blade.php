@@ -13,7 +13,8 @@
 		<p>Let the game begin!</p>
 
 		<H2>Create new Article</H2>
-		{!! Form::open() !!}
+
+		{!! Form::open(['url' => 'articles']) !!}
 		<!-- ID Form Input -->
 
 		<div class="form-group">
@@ -59,15 +60,11 @@
 				{!! Form::label('user_id:','User_ID:')!!}
 				{!! Form::text('user_id','null', ['class' => 'form-control'])  !!}
 			</div>
-				<!-- created_at Form Input -->
-			<div class="form-group">
-				{!! Form::label('created_at:','Created At:')!!}
-				{!! Form::text('created_at','null', ['class' => 'form-control'])  !!}
-			</div>
-				<!-- updated_at Form Input -->
-			<div class="form-group">
-				{!! Form::label( 'updated_at:','Uploaded At:')!!}
-				{!! Form::text( 'updated_at','null', ['class' => 'form-control'])  !!}
+			
+			<div class=form-grop">
+				
+				{!! Form::submit('Add Article', ['class' => 'btn btn-primary form-control']) !!}
+
 			</div>
 
 		{!! Form::close() !!}

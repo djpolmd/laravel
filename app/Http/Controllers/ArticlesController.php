@@ -4,12 +4,11 @@ namespace App\Http\Controllers;
 use App\Article;
 use app\Http\Requests;
 use app\Http\Requests\ArticleRequest;
-use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use app\Http\Controllers\Controller;
 use DB;
 use App\Quotation;
-
+use Request;
 // use Carbon\Carbon;
 
 class ArticlesController extends Controller {
@@ -36,6 +35,12 @@ class ArticlesController extends Controller {
         return $article;
     }
 
+    public function store()
+    {
+        $input = Requests::all();
+
+        return $input;
+    }
 }
 
  ?>
