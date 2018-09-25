@@ -36,7 +36,7 @@ Route::get('app', 'ArticlesController@add');
 
 
 Route::get('/articles', 'ArticlesController@show_all');
-Route::get('/articles/{id}','ArticlesController@index');
+Route::get('/articles/{id}','ArticlesController@show');
 
 
 /*Route::get('articles', function()
