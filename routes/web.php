@@ -36,8 +36,8 @@ Route::get('app', 'ArticlesController@add');
 
 
 Route::get('/articles', 'ArticlesController@show_all');
+Route::get('/articles/create','ArticlesController@create');
 Route::get('/articles/{id}','ArticlesController@show');
-
 
 /*Route::get('articles', function()
 {

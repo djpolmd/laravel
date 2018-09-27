@@ -19,9 +19,11 @@ VALUES (null, 'lampa','lampa un corp de iluinat', 'lampa.jpg', 'loreipsum was_se
 
 ALTER TABLE articles CHANGE  articol_id  article.id INT(4) NOT NULL AUTO_INCREMENT;
 ---------------
+
 SHOW COLUMnS FROM articles;
 describe articles;
 ---------------
+
 $article = App\Article::create(['title' => 'gun', 'description' => 'Its small gun','image' => 'gun.jpg','text' => 'some about gun', 'send_to_admin_email' => 1, 'was_sent_to_admin_email' => 0, 'user_id' => 0,'updated_at' => Carbon\Carbon::now()])
 
 $article = App\Article::create(['title' => 'gun', 'description' => 'Its small gun','image' => 'gun.jpg','text' => 'some about gun', 'send_to_admin_email' => 1])
