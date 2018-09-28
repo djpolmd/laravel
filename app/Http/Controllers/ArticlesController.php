@@ -17,7 +17,9 @@ class ArticlesController extends Controller {
 
 	public function add()
 	{
-		return view('aticle.create');
+	$articol = DB::table('articles')->get();
+	return view('article.articles', compact('articol'));
+	
 	}
 	
 	// aratam toate articole existente;
@@ -27,8 +29,8 @@ class ArticlesController extends Controller {
 		$articol = Article::all();
 
 	return view('article.articles', compact('articol')); //variable without $ needed just in '';
-
 	}
+
 	public function show_all()
 	{
 		$articol = DB::table('articles')->get();
@@ -37,6 +39,29 @@ class ArticlesController extends Controller {
 
 	}
 
+// -------------Toate articole-------------------
+
+	public function store()
+	{
+		$input = Request::all();
+
+		$input['published_at'] = Carbon::now();
+
+		Article::create($input);
+
+		return redirect('articles');
+
+		return $input;
+	}
+
+
+	// introducem un articol 
+//----------------------------
+	public function create()
+	{
+		return view('article.create', compact('articol'));
+	}
+	
 
 	// cautam articol dupa id
 //---------------------------------------
@@ -48,26 +73,11 @@ class ArticlesController extends Controller {
 
 		//return $article;
 	}
-
-	// introducem un articol 
-//----------------------------
-	public function create()
+	public  function id_search()
 	{
-		return view('artices.create');
+		return view('article.id_search', compact('articol'));
 	}
 
-	public function store()
-	{
-		$input = Requests::all();
-
-		$input['published_at'] = Carbon::now();
-
-		Article::create($input);
-
-		return redirect('articles');
-
-		return $input;
-	}
 }
 
  ?>

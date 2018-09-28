@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 	<head>
 		<title>Demo</title>
@@ -9,9 +10,16 @@
 		<style type="text/css"></style>
 	</head>
 	<body>
-		
-		
-		<H4> {{$one}} {{$two}} </H4>
 
+	<h1> Find the ID </h1>
+	
+			<!-- body Form Input -->
+		<div class="form-group">
+			{!! Form::label('body:','Body:')!!}
+			{!! Form::text('body','null', ['class' => 'form-control'])  !!}
+		</div>
+       
+		<p>Let the game begin!</p>
+		<script type="text/javascript"></script>
 	</body>
 </html>

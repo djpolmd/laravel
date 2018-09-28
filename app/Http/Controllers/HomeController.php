@@ -27,10 +27,7 @@ class HomeController extends Controller
 	}
 
 
-	public function add()
-	{
-		return view('article.add');
-	}
+
 }
 //  -----------------  my code here  --------
 

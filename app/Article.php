@@ -11,9 +11,12 @@ class Article extends Model
 	protected $fillable = [
 		'title', 
 		'text', 
+		'description',
 		'image',
 		'text',
+		'was_sent_to_admin_email',
 		'send_to_admin_email',
+		'user_id',
 		'created_at'
 	];
 

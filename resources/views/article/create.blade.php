@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>My Document</title>
+		<title>Demo</title>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	    <meta name="description" content="Demo project">
@@ -10,11 +10,73 @@
 		<style type="text/css"></style>
 	</head>
 	<body>
-		<p>Create Article  <font color="red">  </font> </p>
-		
-		{!! Form::open !!}
+		<p>Let the game begin!</p>
 
-		{!! Form close !!}
+		<H2>Create new Article</H2>
+
+		{!! Form::open(['url' => 'articles', 'class' => 'form-horizontal']) !!}
+
+
+    <fieldset>
+ 
+        <legend>Create New Article</legend>
+
+		<!-- ID Form Input -->
+
+		<div class="form-group">
+			{!! Form::label('Id:','Name')!!}
+
+			{!! Form::text('id','null', ['class' => 'form-control']) !!}
+		
+
+		</div>
+
+			<!--'Title Form Input -->
+			<div class="form-group">
+				{!! Form::label('Title:','Enter Title:')!!}
+				{!! Form::text('title','null', ['class' => 'form-control'])  !!}
+			</div>
+			<!-- body Form Input -->
+			<div class="form-group">
+				{!! Form::label('Description:','Description:')!!}
+				{!! Form::textarea('description','null', ['class' => 'form-control'])  !!}
+			</div>
+				<!-- Image Form Input -->
+			<div class="form-group">
+				{!! Form::label('Image:','Image :')!!}
+				{!! Form::text('image','null', ['class' => 'form-control'])  !!}
+			</div>
+			<!-- Text Form Input -->
+			<div class="form-group">
+				{!! Form::label('Text:','Text')!!}
+				{!! Form::textarea('text','null', ['class' => 'form-control'])  !!}
+			</div>
+			<!-- Send Form Input -->
+			<div class="form-group">
+				{!! Form::label('Send:','Send to admin email:')!!}
+				{!! Form::text('send_to_admin_email','null', ['class' => 'form-control'])  !!}
+			</div>	
+				<!-- Was_send Form Input -->
+			<div class="form-group">
+				{!! Form::label('Was_send:','If was send:')!!}
+				{!! Form::text('was_sent_to_admin_email','null', ['class' => 'form-control'])  !!}
+			</div>
+				<!-- user_id Form Input -->
+			<div class="form-group">
+				{!! Form::label('user_id:','User_ID:')!!}
+				{!! Form::text('user_id','null', ['class' => 'form-control'])  !!}
+			</div>
+			
+			<div class=form-grop">
+				
+				{!! Form::submit('Add Article', ['class' => 'btn btn-primary form-control']) !!}
+
+			</div>
+
+		{!! Form::close() !!}
 		<script type="text/javascript"></script>
 	</body>
 </html>
+@section('content')
+<H1></H1>
+@stop

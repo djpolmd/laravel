@@ -5,7 +5,8 @@
 
     {!! Form::label('title', 'Title:') !!}
 
-    {!! Form::text('title', null, ['class' => 'form-control']) !!} <!-- null field is pre-filled data -->
+    {!! Form::text('title', null, ['class' => 'form-control']) !!} 
+    <!-- null field is pre-filled data -->
 
 </div>
 

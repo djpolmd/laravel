@@ -29,15 +29,22 @@ Route::get('user/{id}', function ($id){
 });
 
 
-Route::get('add', 'HomeController@add');
-Route::get('app', 'ArticlesController@add');
 
 //--------------------Articles -----------------------------
 
 
 Route::get('/articles', 'ArticlesController@show_all');
+
 Route::get('/articles/create','ArticlesController@create');
+
+Route::get('/articles/add','ArticlesController@add');
+
+Route::get('/articles/id_search', 'ArticlesController@id_search');
+
+
 Route::get('/articles/{id}','ArticlesController@show');
+
+Route::post('articles', 'ArticlesController@store');
 
 /*Route::get('articles', function()
 {
