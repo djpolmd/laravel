@@ -84,9 +84,9 @@
 
 				<div class="links">
 					
-					<li><a href="article/create">Adaugare articol : POST</a></li><br>
-					<li><a href="article/edit">Editare articol</a></li><br>
-				   	<li><a href="article/update/">Modificare articol</a></li><br>
+					<li><a href="articles/create">Adaugare articol : POST</a></li><br>
+					<li><a href="articles/edit">Editare articol</a></li><br>
+				   	<li><a href="articles/update/">Modificare articol</a></li><br>
 					<li><a href="/articles">Vizualiare articole (lista)</a>
 					</li><br>
 					<li>

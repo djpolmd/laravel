@@ -17,6 +17,7 @@
 		{!! Form::open(['url' => 'articles', 'class' => 'form-horizontal']) !!}
 
 
+
     <fieldset>
  
         <legend>Create New Article</legend>
