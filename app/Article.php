@@ -20,5 +20,8 @@ class Article extends Model
 		'created_at'
 	];
 
-	
+ public function setPublishedAttribute($date)
+        {
+            $this->attribute['published-at'] = Carbon::parse($date);
+        }
 }

@@ -7,7 +7,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta name="description" content="Demo project">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-			integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
 		<style type="text/css"></style>
 	</head>
 	<body>
@@ -22,7 +22,7 @@
 					<TH rowspan="2">Titlu<BR>Descrierea
 					<TR><TH>text<TH>Imagine
 				@foreach ($articol as $art)
-					<TR><TH><a href="{{ url('/articles',$art->id) }}"> {{$art->title}} </a>
+					<TR><TH><a href="{{ url('/articles',$art->id) }}"> {{$art->title}} <br> {{$art->created_at}} </a>
 					<TD>{{$art->description}}<TD>{!!Html::Image('storage/img/'.$art->image)!!}<TD>{{$art->text}}
 					 
 					

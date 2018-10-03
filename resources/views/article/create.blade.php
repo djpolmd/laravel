@@ -7,6 +7,7 @@
 	    <meta name="description" content="Demo project">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+		
 		<style type="text/css"></style>
 	</head>
 	<body>
@@ -27,7 +28,7 @@
 		<div class="form-group">
 			{!! Form::label('Id:','Name')!!}
 
-			{!! Form::text('id','null', ['class' => 'form-control']) !!}
+			{!! Form::text('id','Write some name', ['class' => 'form-control']) !!}
 		
 
 		</div>
@@ -35,17 +36,17 @@
 			<!--'Title Form Input -->
 			<div class="form-group">
 				{!! Form::label('Title:','Enter Title:')!!}
-				{!! Form::text('title','null', ['class' => 'form-control'])  !!}
+				{!! Form::text('title','Enter title', ['class' => 'form-control'])  !!}
 			</div>
 			<!-- body Form Input -->
-			<div class="form-group">
+			<div class="form-group"> lorem
 				{!! Form::label('Description:','Description:')!!}
-				{!! Form::textarea('description','null', ['class' => 'form-control'])  !!}
+				{!! Form::textarea('description','lorem ipsum', ['class' => 'form-control'])  !!}
 			</div>
 				<!-- Image Form Input -->
 			<div class="form-group">
 				{!! Form::label('Image:','Image :')!!}
-				{!! Form::text('image','null', ['class' => 'form-control'])  !!}
+				{!! Form::text('image','book.jpeg', ['class' => 'form-control'])  !!}
 			</div>
 			<!-- Text Form Input -->
 			<div class="form-group">
@@ -60,14 +61,19 @@
 				<!-- Was_send Form Input -->
 			<div class="form-group">
 				{!! Form::label('Was_send:','If was send:')!!}
-				{!! Form::text('was_sent_to_admin_email','null', ['class' => 'form-control'])  !!}
+				{!! Form::text('was_sent_to_admin_email',0, ['class' => 'form-control'])  !!}
 			</div>
 				<!-- user_id Form Input -->
 			<div class="form-group">
 				{!! Form::label('user_id:','User_ID:')!!}
-				{!! Form::text('user_id','null', ['class' => 'form-control'])  !!}
+				{!! Form::text('user_id','1', ['class' => 'form-control'])  !!}
 			</div>
-			
+					<!-- body Form Input -->
+			<div class="form-group">
+				{!! Form::label('created_at:','Created at:')!!}
+				{!! Form::input('date','created_at', date('Y-m-d'),['class' => 'form-control'])  !!}
+			</div>
+
 			<div class=form-grop">
 				
 				{!! Form::submit('Add Article', ['class' => 'btn btn-primary form-control']) !!}

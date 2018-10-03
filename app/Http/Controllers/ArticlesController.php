@@ -41,12 +41,13 @@ class ArticlesController extends Controller {
 
 // -------------Toate articole-------------------
 
-	public function store()
+	public function store(CreateArticleRequest $request)
 	{
 		$input = Request::all();
 
 		$input['published_at'] = Carbon::now();
-
+		$input['updated_at'] = Carbon::now();
+		
 		Article::create($input);
 
 		return redirect('articles');
