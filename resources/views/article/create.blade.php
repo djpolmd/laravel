@@ -1,19 +1,16 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<title>Demo</title>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	    <meta name="description" content="Demo project">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
-		
-		<style type="text/css"></style>
-	</head>
-	<body>
-		<p>Let the game begin!</p>
 
-		<H2>Create new Article</H2>
+@extends('layouts.app')
+
+@section('title', 'Page Title')
+
+@section('sidebar')
+    @parent
+
+    <p> This is appended to the master sidebar.</p>
+@endsection
+
+  @section('content')
+
 
 		{!! Form::open(['url' => 'articles', 'class' => 'form-horizontal']) !!}
 
@@ -34,45 +31,62 @@
 		</div>
 
 			<!--'Title Form Input -->
+
 			<div class="form-group">
+
 				{!! Form::label('Title:','Enter Title:')!!}
 				{!! Form::text('title','Enter title', ['class' => 'form-control'])  !!}
 			</div>
 			<!-- body Form Input -->
-			<div class="form-group"> lorem
+
+			<div class="form-group"> 
+
 				{!! Form::label('Description:','Description:')!!}
 				{!! Form::textarea('description','lorem ipsum', ['class' => 'form-control'])  !!}
 			</div>
 				<!-- Image Form Input -->
+
 			<div class="form-group">
+
 				{!! Form::label('Image:','Image :')!!}
 				{!! Form::text('image','book.jpeg', ['class' => 'form-control'])  !!}
 			</div>
 			<!-- Text Form Input -->
+
 			<div class="form-group">
+
 				{!! Form::label('Text:','Text')!!}
 				{!! Form::textarea('text','null', ['class' => 'form-control'])  !!}
 			</div>
 			<!-- Send Form Input -->
+
 			<div class="form-group">
+
 				{!! Form::label('Send:','Send to admin email:')!!}
 				{!! Form::text('send_to_admin_email','null', ['class' => 'form-control'])  !!}
 			</div>	
 				<!-- Was_send Form Input -->
+
 			<div class="form-group">
+
 				{!! Form::label('Was_send:','If was send:')!!}
 				{!! Form::text('was_sent_to_admin_email',0, ['class' => 'form-control'])  !!}
 			</div>
 				<!-- user_id Form Input -->
+
 			<div class="form-group">
+
 				{!! Form::label('user_id:','User_ID:')!!}
 				{!! Form::text('user_id','1', ['class' => 'form-control'])  !!}
 			</div>
 					<!-- body Form Input -->
+
 			<div class="form-group">
 				{!! Form::label('created_at:','Created at:')!!}
 				{!! Form::input('date','created_at', date('Y-m-d'),['class' => 'form-control'])  !!}
 			</div>
+
+			<!-- Subbmit button on form -->
 
 			<div class=form-grop">
 				
@@ -80,10 +94,24 @@
 
 			</div>
 
-		{!! Form::close() !!}
-		<script type="text/javascript"></script>
-	</body>
+			{!! Form::close() !!}
+
+
 </html>
-@section('content')
-<H1></H1>
+
+
+<!-- Error message if some wrong -->
+
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+ 
+		
+
 @stop

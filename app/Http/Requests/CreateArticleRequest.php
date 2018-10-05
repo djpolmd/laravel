@@ -2,7 +2,11 @@
 
 namespace App\Http\Requests;
 
+
+// app\Http\Requests\CreateArticleRequest
+
 use Illuminate\Foundation\Http\FormRequest;
+
 
 class CreateArticleRequest extends FormRequest
 {
@@ -11,16 +15,14 @@ class CreateArticleRequest extends FormRequest
      *
      * @return bool
      */
+
     public function authorize()
     {
         return true;
     }
 
-    /**
-     * Get the validation rules that apply to the request.
-     *
-     * @return array
-     */
+  
+
     public function rules()
     {
         return [

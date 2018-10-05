@@ -1,14 +1,17 @@
 <?php 
 
 namespace App\Http\Controllers;
+
 use App\Article;
-use app\Http\Requests;
-use app\Http\Requests\ArticleRequest;
+
+use App\Http\Requests\CreateArticleRequest;
+use App\Http\Controllers\Controller;
+
 use Illuminate\Http\Response;
-use app\Http\Controllers\Controller;
+
 use DB;
 use App\Quotation;
-use Request;
+
 use Carbon\Carbon;
 
 class ArticlesController extends Controller {
@@ -41,18 +44,14 @@ class ArticlesController extends Controller {
 
 // -------------Toate articole-------------------
 
-	public function store(CreateArticleRequest $request)
+	public function store(CreateArticleRequest  $request)
 	{
-		$input = Request::all();
-
-		$input['published_at'] = Carbon::now();
-		$input['updated_at'] = Carbon::now();
 		
-		Article::create($input);
+		Article::create($request->all());
 
 		return redirect('articles');
 
-		return $input;
+		return $input; //debug only
 	}
 
 
@@ -61,6 +60,9 @@ class ArticlesController extends Controller {
 	public function create()
 	{
 		return view('article.create', compact('articol'));
+				$input['published_at'] = Carbon::now();
+		$input['updated_at'] = Carbon::now();
+		
 	}
 	
 
