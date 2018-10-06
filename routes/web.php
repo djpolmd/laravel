@@ -30,6 +30,7 @@ Route::get('user/{id}', function ($id){
 
 
 
+
 //--------------------Articles -----------------------------
 
 Route::get('/articles', 'ArticlesController@show_all');			//show list of articles
@@ -38,6 +39,7 @@ Route::post('articles/save', 'ArticlesController@save');   		// save created art
 Route::get('/articles/id_search', 'ArticlesController@id_search'); //search new article
 Route::get('/articles/{id}','ArticlesController@show');			// search by id article
 
+Route::get('/articles/{id}/edit', 'ArticlesController@edit');
 //Route::resource('articles','ArticlesController');
 
 

@@ -71,6 +71,19 @@ class ArticlesController extends Controller {
 		//return $article;
 	}
 
+	public function update()
+	{
+
+	}
+
+	public function edit($id)
+	{
+		$articol = Article::find($id);
+
+		return $articol; 
+		return view('article.edit', compact('articol'));
+	}
+
 	public  function id_search()
 	{
 		return view('article.id_search', compact('articol'));

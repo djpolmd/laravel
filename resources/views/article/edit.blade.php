@@ -1,15 +1,21 @@
 @extends('layouts.app')
 
+@section('sidebar')
+	@parent
+
+@endsection
+
   @section('content')
 
+  	@if (Auth::check())
+		
+   		  {!! $id = Auth::user()->id !!}
+		
+		{!! Form::open(['metod' => 'PATCH' , 'url' => 'ArticleController@update', $articol->id]) !!}
 
-		{!! Form::open(['url' => 'articles', 'class' => 'form-horizontal']) !!}
-
-
-
-    <fieldset>
+	<fieldset>
  
-        <legend>Create New Article</legend>
+		<legend>Edit Article:</legend>
 
 		<!-- ID Form Input -->
 
@@ -53,48 +59,52 @@
 			<div class="form-group">
 
 				{!! Form::label('Send:','Send to admin email:')!!}
-				{!! Form::text('send_to_admin_email','null', ['class' => 'form-control'])  !!}
+				
+				{{ Form::checkbox('send_to_admin_email', true, false ) }}
 			</div>	
-				<!-- Was_send Form Input -->
 
+				<!-- Was_send Form Input -->
 			<div class="form-group">
 
 				{!! Form::label('Was_send:','If was send:')!!}
-				{!! Form::text('was_sent_to_admin_email',0, ['class' => 'form-control'])  !!}
+
+				{!! Form::checkbox('was_sent_to_admin_email', true, true)  !!}
 			</div>
+
 				<!-- user_id Form Input -->
-
-			<div class="form-group">
-
-				{!! Form::label('user_id:','User_ID:')!!}
-				{!! Form::text('user_id','1', ['class' => 'form-control'])  !!}
-			</div>
+				{!! Form::hidden('user_id', $id)!!}
 					<!-- body Form Input -->
 
 			<div class="form-group">
 				{!! Form::label('created_at:','Created at:')!!}
 				{!! Form::input('date','created_at', date('Y-m-d'),['class' => 'form-control'])  !!}
-			</div>
+			</div> 
 
 			<!-- Subbmit button on form -->
+			
+			<div class="form-group">
 
-			<div class=form-grop">
-				
 				{!! Form::submit('Add Article', ['class' => 'btn btn-primary form-control']) !!}
 			</div>
 			
+
 			{!! Form::close() !!}
-</html>
-<!-- Error message if some wrong -->
-@if ($errors->any())
-    <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-@endif
- 
+
+					<!-- Validation field check -->
+							@if ($errors->any())
+							<div class="alert alert-danger">
+								<ul>
+									@foreach ($errors->all() as $error)
+										<li>{{ $error }}</li>
+									@endforeach
+								</ul>
+							</div>
+						@endif
+
+			@else 
+				<H2> Please log-in </H2>
+			@endif
+
+		<!-- Error message if some wrong -->
 		
 @stop

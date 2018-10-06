@@ -90,7 +90,7 @@
 
 			{!! Form::close() !!}
 
-					<!-- Validation fild chack -->
+					<!-- Validation field check -->
 							@if ($errors->any())
 							<div class="alert alert-danger">
 								<ul>
