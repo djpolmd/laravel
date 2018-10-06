@@ -68,7 +68,7 @@ class ArticlesController extends Controller {
 
 		return view('article.show',compact('articol'));
 
-		//return $article;
+	
 	}
 
 	public function update()
@@ -78,9 +78,10 @@ class ArticlesController extends Controller {
 
 	public function edit($id)
 	{
-		$articol = Article::find($id);
+		$articol = Article::findOrFail($id);
 
-		return $articol; 
+		//return $articol;
+
 		return view('article.edit', compact('articol'));
 	}
 

@@ -9,7 +9,7 @@
 
   	@if (Auth::check())
 		
-   		  {!! $id = Auth::user()->id !!}
+   		
 		
 		{!! Form::open(['metod' => 'PATCH' , 'url' => 'ArticleController@update', $articol->id]) !!}
 
@@ -21,7 +21,7 @@
 
 		<div class="form-group">
 			{!! Form::label('Id:','Name')!!}
-			{!! Form::text('id','Write some name', ['class' => 'form-control']) !!}
+			{!! Form::text('id',  null, ['class' => 'form-control']) !!}
 		
 
 		</div>
@@ -31,28 +31,28 @@
 			<div class="form-group">
 
 				{!! Form::label('Title:','Enter Title:')!!}
-				{!! Form::text('title','Enter title', ['class' => 'form-control'])  !!}
+				{!! Form::text('title', null, ['class' => 'form-control'])  !!}
 			</div>
 			<!-- body Form Input -->
 
 			<div class="form-group"> 
 
 				{!! Form::label('Description:','Description:')!!}
-				{!! Form::textarea('description','lorem ipsum', ['class' => 'form-control'])  !!}
+				{!! Form::textarea('description', null, ['class' => 'form-control'])  !!}
 			</div>
 				<!-- Image Form Input -->
 
 			<div class="form-group">
 
 				{!! Form::label('Image:','Image :')!!}
-				{!! Form::text('image','book.jpeg', ['class' => 'form-control'])  !!}
+				{!! Form::text('image', null, ['class' => 'form-control'])  !!}
 			</div>
 			<!-- Text Form Input -->
 
 			<div class="form-group">
 
 				{!! Form::label('Text:','Text')!!}
-				{!! Form::textarea('text','null', ['class' => 'form-control'])  !!}
+				{!! Form::textarea('text', null, ['class' => 'form-control'])  !!}
 			</div>
 			<!-- Send Form Input -->
 
@@ -72,7 +72,7 @@
 			</div>
 
 				<!-- user_id Form Input -->
-				{!! Form::hidden('user_id', $id)!!}
+				{!! Form::hidden('user_id', Auth::user()->id)!!}
 					<!-- body Form Input -->
 
 			<div class="form-group">
