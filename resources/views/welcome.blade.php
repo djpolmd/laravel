@@ -84,13 +84,14 @@
 
 				<div class="links">
 					
-					<li><a href="articles/create">Adaugare articol : POST</a></li><br>
-					<li><a href="articles/edit">Editare articol</a></li><br>
+					<li><a href="articles/add">Adaugare articol : GET /articles/add  -> POST /article/save</a></li><br>
+					<li><a href="articles/edit/">Editare articol : GET /articles/edit/{articles_ID}</a></li><br>
 				   	<li><a href="articles/update/">Modificare articol</a></li><br>
-					<li><a href="/articles">Vizualiare articole (lista)</a>
+				   	<br>
+					<li><a href="/articles">Vizualiare articole (lista) : GET /articles</a>
 					</li><br>
 					<li>
-					<a href="/articles/id_search">Vizualizare unui articol {ID}</a>
+					<a href="/articles/id_search">Vizualizare unui articol {ID} : GET /articles/{articles_ID} </a>
 					</li><br>
 				</div>
 				<div> ... </div>

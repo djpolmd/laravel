@@ -20,8 +20,11 @@ class ArticlesController extends Controller {
 
 	public function add()
 	{
-	$articol = DB::table('articles')->get();
-	return view('article.articles', compact('articol'));
+
+	return view('article.create', compact('articol'));
+
+	$input['published_at'] = Carbon::now();
+	$input['updated_at'] = Carbon::now();
 	
 	}
 	
@@ -44,27 +47,18 @@ class ArticlesController extends Controller {
 
 // -------------Toate articole-------------------
 
-	public function store(CreateArticleRequest  $request)
+	public function save(CreateArticleRequest  $request)
 	{
-		
-		Article::create($request->all());
 
-		return redirect('articles');
+		
+	$articolul = Article::create($request->all());
+
+	//	return redirect('/articles');
 
 		return $input; //debug only
 	}
 
 
-	// introducem un articol 
-//----------------------------
-	public function create()
-	{
-		return view('article.create', compact('articol'));
-				$input['published_at'] = Carbon::now();
-		$input['updated_at'] = Carbon::now();
-		
-	}
-	
 
 	// cautam articol dupa id
 //---------------------------------------
@@ -76,6 +70,7 @@ class ArticlesController extends Controller {
 
 		//return $article;
 	}
+
 	public  function id_search()
 	{
 		return view('article.id_search', compact('articol'));

@@ -32,26 +32,14 @@ Route::get('user/{id}', function ($id){
 
 //--------------------Articles -----------------------------
 
+Route::get('/articles', 'ArticlesController@show_all');			//show list of articles
+Route::get('/articles/add','ArticlesController@add'); 			// adding new article 
+Route::post('articles/save', 'ArticlesController@save');   		// save created article with funtion (store)
+Route::get('/articles/id_search', 'ArticlesController@id_search'); //search new article
+Route::get('/articles/{id}','ArticlesController@show');			// search by id article
 
-Route::get('/articles', 'ArticlesController@show_all');
-
-Route::get('/articles/create','ArticlesController@create');
-
-Route::get('/articles/add','ArticlesController@add');
-
-Route::get('/articles/id_search', 'ArticlesController@id_search');
+//Route::resource('articles','ArticlesController');
 
 
-Route::get('/articles/{id}','ArticlesController@show');
 
-Route::post('articles', 'ArticlesController@store');
-
-/*Route::get('articles', function()
-{
-
-  $articles = articles::all();
-  return View::make('articles')->with('articles', $articles);
-});
-
-*/
 ?>

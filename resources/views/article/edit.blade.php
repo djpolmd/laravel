@@ -1,21 +1,15 @@
 @extends('layouts.app')
 
-@section('sidebar')
-	@parent
-
-@endsection
-
   @section('content')
 
-  	@if (Auth::check())
-		
-   		  {{ $id = Auth::user()->id }}
-		
-		{!! Form::open(['url' => '/articles/save', 'class' => 'form-horizontal']) !!}
 
-	<fieldset>
+		{!! Form::open(['url' => 'articles', 'class' => 'form-horizontal']) !!}
+
+
+
+    <fieldset>
  
-		<legend>Create New Article</legend>
+        <legend>Create New Article</legend>
 
 		<!-- ID Form Input -->
 
@@ -59,50 +53,48 @@
 			<div class="form-group">
 
 				{!! Form::label('Send:','Send to admin email:')!!}
-				{!! Form::checkbox('send_to_admin_email','true')  !!}
+				{!! Form::text('send_to_admin_email','null', ['class' => 'form-control'])  !!}
 			</div>	
-
 				<!-- Was_send Form Input -->
+
 			<div class="form-group">
 
 				{!! Form::label('Was_send:','If was send:')!!}
-				{!! Form::checkbox('was_sent_to_admin_email', 'true')  !!}
+				{!! Form::text('was_sent_to_admin_email',0, ['class' => 'form-control'])  !!}
 			</div>
-
 				<!-- user_id Form Input -->
-				{!! Form::hidden('user_id', $id)!!}
+
+			<div class="form-group">
+
+				{!! Form::label('user_id:','User_ID:')!!}
+				{!! Form::text('user_id','1', ['class' => 'form-control'])  !!}
+			</div>
 					<!-- body Form Input -->
 
 			<div class="form-group">
 				{!! Form::label('created_at:','Created at:')!!}
 				{!! Form::input('date','created_at', date('Y-m-d'),['class' => 'form-control'])  !!}
-			</div> 
+			</div>
 
 			<!-- Subbmit button on form -->
-			
-			<div class="form-group">
 
+			<div class=form-grop">
+				
 				{!! Form::submit('Add Article', ['class' => 'btn btn-primary form-control']) !!}
 			</div>
-
+			
 			{!! Form::close() !!}
-
-			@else 
-				<H2> Please log-in </H2>
-			@endif
-
-		<!-- Error message if some wrong -->
-	
-
-		@if ($errors->any())
-			<div class="alert alert-danger">
-				<ul>
-					@foreach ($errors->all() as $error)
-						<li>{{ $error }}</li>
-					@endforeach
-				</ul>
-			</div>
-		@endif
+</html>
+<!-- Error message if some wrong -->
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
  
 		
 @stop
