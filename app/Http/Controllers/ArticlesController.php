@@ -53,9 +53,9 @@ class ArticlesController extends Controller {
 		
 	$articolul = Article::create($request->all());
 
-	//	return redirect('/articles');
+		return redirect('/articles');
 
-		return $input; //debug only
+	//	return $request; //debug only
 	}
 
 

@@ -59,14 +59,16 @@
 			<div class="form-group">
 
 				{!! Form::label('Send:','Send to admin email:')!!}
-				{!! Form::checkbox('send_to_admin_email','true')  !!}
+				
+				{{ Form::checkbox('send_to_admin_email', true, false ) }}
 			</div>	
 
 				<!-- Was_send Form Input -->
 			<div class="form-group">
 
 				{!! Form::label('Was_send:','If was send:')!!}
-				{!! Form::checkbox('was_sent_to_admin_email', 'true')  !!}
+
+				{!! Form::checkbox('was_sent_to_admin_email', true, true)  !!}
 			</div>
 
 				<!-- user_id Form Input -->
@@ -84,8 +86,20 @@
 
 				{!! Form::submit('Add Article', ['class' => 'btn btn-primary form-control']) !!}
 			</div>
+			
 
 			{!! Form::close() !!}
+
+					<!-- Validation fild chack -->
+							@if ($errors->any())
+							<div class="alert alert-danger">
+								<ul>
+									@foreach ($errors->all() as $error)
+										<li>{{ $error }}</li>
+									@endforeach
+								</ul>
+							</div>
+						@endif
 
 			@else 
 				<H2> Please log-in </H2>
@@ -94,15 +108,7 @@
 		<!-- Error message if some wrong -->
 	
 
-		@if ($errors->any())
-			<div class="alert alert-danger">
-				<ul>
-					@foreach ($errors->all() as $error)
-						<li>{{ $error }}</li>
-					@endforeach
-				</ul>
-			</div>
-		@endif
+		
  
 		
 @stop
