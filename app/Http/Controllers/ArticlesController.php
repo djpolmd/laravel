@@ -16,7 +16,7 @@ use Carbon\Carbon;
 
 class ArticlesController extends Controller {
 
- 	 // adaugam un articol in lista
+	 // adaugam un articol in lista
 
 	public function add()
 	{
@@ -71,10 +71,15 @@ class ArticlesController extends Controller {
 	
 	}
 
-	public function update()
+	public function update($id, Request $request)
 	{
+		$articol = Article::find($id);
 
+		$articol->update($request->all());
+
+	return redirect('/articles');
 	}
+	
 
 	public function edit($id)
 	{
