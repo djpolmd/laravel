@@ -35,11 +35,15 @@ Route::get('user/{id}', function ($id){
 
 Route::get('/articles', 'ArticlesController@show_all');			//show list of articles
 Route::get('/articles/add','ArticlesController@add'); 			// adding new article 
+
+//Route::post('/articles/update', 'ArticlesController@update');
+
 Route::post('articles/save', 'ArticlesController@save');   		// save created article with funtion (store)
 Route::get('/articles/id_search', 'ArticlesController@id_search'); //search new article
 Route::get('/articles/{id}','ArticlesController@show');			// search by id article
 
 Route::patch('/articles/{id}/update', 'ArticlesController@update');	//Update atricles with data
+
 Route::get('/articles/{id}/edit', 'ArticlesController@edit');	
 //Route::resource('articles','ArticlesController');
 

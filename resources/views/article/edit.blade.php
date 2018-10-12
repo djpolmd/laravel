@@ -9,11 +9,9 @@
 
   	@if (Auth::check())
 		
-   		
-		
 		{!! Form::model($articol, [
 			'metod' => 'PATCH', 
-			'route' => ['articol.update', $articol->id]] ) !!}
+			'action' => ['ArticlesController@update', $articol->id]] ) !!}
 
 	<fieldset>
  
@@ -23,7 +21,7 @@
 		<div class="col-md-9">
             <div class="input-group">
 				{!! Form::label('Id:','Name')!!}
-				{!! Form::text('id',  null, ['class' => 'form-control']) !!}
+				{!! Form::text('id',  $articol->id, ['class' => 'form-control']) !!}
 		
           </div>
 		</div>
@@ -33,7 +31,7 @@
             <div class="input-group">
 
 				{!! Form::label('Title:','Enter Title:')!!}
-				{!! Form::text('title', null, ['class' => 'form-control'])  !!}
+				{!! Form::text('title', $articol->title, ['class' => 'form-control'])  !!}
 			</div>
 		</div>
 
@@ -42,7 +40,7 @@
 			<div class="col-md-9">
 	            <div class="input-group">
 					{!! Form::label('Description:','Description:')!!}
-					{!! Form::textarea('description', null, ['class' => 'form-control'])  !!}
+					{!! Form::textarea('description', $articol->description, ['class' => 'form-control'])  !!}
 				</div>
 			</div>
 
@@ -51,7 +49,7 @@
 		<div class="col-md-9">
             <div class="input-group">
 				{!! Form::label('Image:','Image :')!!}
-				{!! Form::text('image', null, ['class' => 'form-control'])  !!}
+				{!! Form::text('image', $articol->image, ['class' => 'form-control'])  !!}
 			</div>
 		</div>
 
@@ -60,7 +58,7 @@
 			<div class="col-md-9">
 	            <div class="input-group">
 					{!! Form::label('Text:','Text')!!}
-					{!! Form::textarea('text', null, ['class' => 'form-control'])  !!}
+					{!! Form::textarea('text', $articol->text, ['class' => 'form-control'])  !!}
 				</div>
 			</div>
 			<!-- Send Form Input -->
@@ -69,7 +67,7 @@
 	            <div class="input-group">
 	            	{!! Form::label('Send:','Send to admin email:')!!}
 					
-					{{ Form::checkbox('send_to_admin_email', true, false ) }}
+					{{ Form::checkbox('send_to_admin_email', $articol->send_to_admin_email, false ) }}
 				</div>	
 			</div>	
 
@@ -79,7 +77,7 @@
 	            <div class="input-group">
 	            {!! Form::label('Was_send:','If was send:')!!}
 
-				{!! Form::checkbox('was_sent_to_admin_email', true, true)  !!}
+				{!! Form::checkbox('was_sent_to_admin_email', $articol->was_sent_to_admin_email, true)  !!}
 				</div>
 			</div>
 
@@ -92,7 +90,7 @@
 			<div class="col-md-9">
      	       <div class="input-group">
             	{!! Form::label('created_at:','Created at:')!!}
-				{!! Form::input('date','created_at', date('Y-m-d'),['class' => 'form-control'])  !!}
+				{!! Form::input('date','created_at', date('Y-m-d'),['class' => 'form-control', 'disabled' => 'disabled'])  !!}
 				</div> 
 			</div>
 		
