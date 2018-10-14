@@ -11,7 +11,6 @@ use Illuminate\Http\Response;
 
 use DB;
 use App\Quotation;
-
 use Carbon\Carbon;
 
 class ArticlesController extends Controller {
@@ -71,12 +70,17 @@ class ArticlesController extends Controller {
 	
 	}
 
-	public function update($id, Request $request)
+	public function update(CreateArticleRequest $request, $id)
 	{
 		$articol = Article::find($id);
 
-		$articol->update($request->all());
+		$articol->title = $request->get('title');
+		$articol->description = $request->get('description');
+		$articol->image = $request->get('image');
+		$articol->text = $request->get('text');
+		$articol->created_at = $request->created_at;
 
+		$articol->save();
 	return redirect('/articles');
 	}
 	
@@ -87,7 +91,7 @@ class ArticlesController extends Controller {
 
 		//return $articol;
 
-		return view('article.edit', compact('articol'));
+		return view('article.edit', compact('articol','id'));
 	}
 
 	public  function id_search()

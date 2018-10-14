@@ -8,15 +8,21 @@
   @section('content')
 
 	@if (Auth::check())
-		
+	
+	<!--	old version
 		{!! Form::model($articol, [
 			'metod' => 'PATCH', 
 			'action' => ['ArticlesController@update', $articol->id]] ) !!}
+-->
+	<div class="container">
+			<h2>Edit A Form</h2><br/>
+				<form method="post" action="{{action('ArticlesController@update', $id)}}">
+				@csrf
+				<input name="_method" type="hidden" value="PATCH">
 
-	<fieldset>
- 
+  	 <div class="row"><div class="col-md-4"></div><div class="form-group col-md-4">
 		<legend>Edit Article:</legend>
-
+	</div></div>
 		<!-- ID Form Input -->
 		  <div class="row">
 			<div class="col-md-4"></div>
@@ -102,14 +108,7 @@
 
 				<!-- body Form Input -->
 
-			  <div class="row">
-			<div class="col-md-4"></div>
-			<div class="form-group col-md-4">
-				{!! Form::label('created_at:','Created at:')!!}
-			   <div class="input-group">
-				{!! Form::input('date','created_at', date('Y-m-d'),['class' => 'form-control', 'disabled' => 'disabled'])  !!}
-				</div> </div>
-			</div>
+				{!! Form::hidden('created_at', $articol->created_at)!!}
 		
 			<!-- Subbmit button on form -->
 			<div class="row">
