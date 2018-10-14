@@ -7,7 +7,7 @@
 
   @section('content')
 
-  	@if (Auth::check())
+	@if (Auth::check())
 		
 		{!! Form::model($articol, [
 			'metod' => 'PATCH', 
@@ -18,67 +18,82 @@
 		<legend>Edit Article:</legend>
 
 		<!-- ID Form Input -->
-		<div class="col-md-9">
-            <div class="input-group">
+		  <div class="row">
+			<div class="col-md-4"></div>
+			<div class="form-group col-md-4">
 				{!! Form::label('Id:','Name')!!}
+			<div class="input-group">
 				{!! Form::text('id',  $articol->id, ['class' => 'form-control']) !!}
 		
-          </div>
+		  </div></div>
 		</div>
+
 			<!--'Title Form Input -->
 
-		<div class="col-md-9">
-            <div class="input-group">
-
+		  <div class="row">
+			<div class="col-md-4"></div>
+			<div class="form-group col-md-4">
 				{!! Form::label('Title:','Enter Title:')!!}
+			<div class="input-group">
+
 				{!! Form::text('title', $articol->title, ['class' => 'form-control'])  !!}
-			</div>
+
+			</div></div>
 		</div>
 
 			<!-- body Form Input -->
 
-			<div class="col-md-9">
-	            <div class="input-group">
+			  <div class="row">
+			<div class="col-md-4"></div>
+			<div class="form-group col-md-4">
 					{!! Form::label('Description:','Description:')!!}
+				<div class="input-group">
 					{!! Form::textarea('description', $articol->description, ['class' => 'form-control'])  !!}
-				</div>
+				</div></div>
 			</div>
 
 			<!-- Image Form Input -->
 
-		<div class="col-md-9">
-            <div class="input-group">
+		  <div class="row">
+			<div class="col-md-4"></div>
+			<div class="form-group col-md-4">
 				{!! Form::label('Image:','Image :')!!}
+		   <div class="input-group">
 				{!! Form::text('image', $articol->image, ['class' => 'form-control'])  !!}
-			</div>
+			</div></div>
 		</div>
 
 			<!-- Text Form Input -->
 
-			<div class="col-md-9">
-	            <div class="input-group">
+			  <div class="row">
+			<div class="col-md-4"></div>
+			<div class="form-group col-md-4">
 					{!! Form::label('Text:','Text')!!}
+				<div class="input-group">
 					{!! Form::textarea('text', $articol->text, ['class' => 'form-control'])  !!}
-				</div>
+				</div></div>
 			</div>
 			<!-- Send Form Input -->
 
-			<div class="col-md-9">
-	            <div class="input-group">
-	            	{!! Form::label('Send:','Send to admin email:')!!}
-					
+			  <div class="row">
+			<div class="col-md-4"></div>
+			<div class="form-group col-md-4">
+					{!! Form::label('Send:','Send to admin email:')!!}					
+				<div class="input-group">
 					{{ Form::checkbox('send_to_admin_email', $articol->send_to_admin_email, false ) }}
-				</div>	
+				</div></div>
 			</div>	
 
 				<!-- Was_send Form Input -->
 
-			<div class="col-md-9">
-	            <div class="input-group">
-	            {!! Form::label('Was_send:','If was send:')!!}
+			  <div class="row">
+			<div class="col-md-4"></div>
+			<div class="form-group col-md-4">
+				{!! Form::label('Was_send:','If was send:')!!}
+				<div class="input-group">
 
 				{!! Form::checkbox('was_sent_to_admin_email', $articol->was_sent_to_admin_email, true)  !!}
-				</div>
+				</div></div>
 			</div>
 
 				<!-- user_id Form Input -->
@@ -87,20 +102,23 @@
 
 				<!-- body Form Input -->
 
-			<div class="col-md-9">
-     	       <div class="input-group">
-            	{!! Form::label('created_at:','Created at:')!!}
+			  <div class="row">
+			<div class="col-md-4"></div>
+			<div class="form-group col-md-4">
+				{!! Form::label('created_at:','Created at:')!!}
+			   <div class="input-group">
 				{!! Form::input('date','created_at', date('Y-m-d'),['class' => 'form-control', 'disabled' => 'disabled'])  !!}
-				</div> 
+				</div> </div>
 			</div>
 		
 			<!-- Subbmit button on form -->
+			<div class="row">
+			<div class="col-md-4"></div>
+			<div class="form-group col-md-4">
 			
-			<div class="form-group">
-
 				{!! Form::submit('Edit Article', ['class' => 'btn btn-primary form-control']) !!}
-			</div>
-			
+			</div></div>
+			</fieldset>
 
 			{!! Form::close() !!}
 

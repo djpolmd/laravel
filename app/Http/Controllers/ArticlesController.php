@@ -51,7 +51,7 @@ class ArticlesController extends Controller {
 	{
 
 		
-	$articolul = Article::create($request->all());
+	$articol = Article::create($request->all());
 
 		return redirect('/articles');
 
