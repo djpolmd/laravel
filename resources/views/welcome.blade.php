@@ -86,7 +86,7 @@
 					
 					<li><a href="articles/add">Adaugare articol : GET /articles/add  -> POST /article/save</a></li><br>
 					<li><a href="articles/edit/1">Editare articol : GET /articles/edit/{articles_ID}</a></li><br>
-				   	<li><a href="articles/update/1">Modificare articol</a></li><br>
+				   	<li>Modificare articol : PATCH /articles/update/{id}</li><br>
 				   	<br>
 					<li><a href="/articles">Vizualiare articole (lista) : GET /articles</a>
 					</li><br>
