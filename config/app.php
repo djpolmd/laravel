@@ -124,6 +124,7 @@ return [
 		/*
 		 * Laravel Framework Service Providers...
 		 */
+
 		Illuminate\Html\HtmlServiceProvider::class, // our HTML 
 		Illuminate\Auth\AuthServiceProvider::class,
 		Illuminate\Broadcasting\BroadcastServiceProvider::class,
@@ -148,6 +149,7 @@ return [
 		Illuminate\Validation\ValidationServiceProvider::class,
 		Illuminate\View\ViewServiceProvider::class,
 		Collective\Html\HtmlServiceProvider::class,
+		
 		/*
 		 * Package Service Providers...
 		 */
@@ -155,6 +157,7 @@ return [
 		/*
 		 * Application Service Providers...
 		 */
+		
 		App\Providers\AppServiceProvider::class,
 		App\Providers\AuthServiceProvider::class,
 		// App\Providers\BroadcastServiceProvider::class,
