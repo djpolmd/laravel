@@ -1,9 +1,12 @@
 @component('mail::message')
-# Introduction
-New article been created!
-Nou articol a fost creat:  {{$art_id}} , {{$art_title}} , {{$art_data}}
+# Utilizatorul ID : {{$user}} 
+New article been created! <br>
+Nou articol a fost creat:  {{$art_id}}, <br>
+Titlu articol: {{$art_title}} , <br>
+Data de creare : {{$art_data}}. <br>
 
-@component('mail::button', ['url' => '/welcome', 'color' => 'success'])
+@php ( $url = 'http://127.0.0.1:8000/articles/'. $art_id) )
+@component('mail::button', ['url' => $url, 'color' => 'success'])
 Vew Order
 @endcomponent
 

@@ -12,33 +12,34 @@ use App\Http\Controllers\ArticleController;
 
 class ArticleCreated extends Mailable
 {
-    use Queueable, SerializesModels;
+	use Queueable, SerializesModels;
 
-    public  $articol;
+	public  $articol;
 
-    /**
-     * Create a new message instance.
-     *
-     * @return void
-     */
-    public function __construct(Article $articol)
-    {
-        $this->articol = $articol; 
+	/**
+	 * Create a new message instance.
+	 *
+	 * @return void
+	 */
+	public function __construct(Article $articol)
+	{
+		$this->articol = $articol; 
 
-    }
+	}
 
-    /**
-     * Build the message.
-     *
-     * @return $this
-     */
-    public function build()
-    {
-        return $this->markdown('admin.emails.articlecreated')->from('test@test.com')
-        ->with([
-                        'art_id' => $this->articol->id,
-                        'art_title' => $this->articol->title,
-                        'art_data' => $this->articol->created_at,
-                    ]);
-    }
+	/**
+	 * Build the message.
+	 *
+	 * @return $this
+	 */
+	public function build()
+	{
+		return $this->markdown('admin.emails.articlecreated')->from('test@test.com')
+		->with([
+						'art_id' 	=> $this->articol->id,
+						'art_title' => $this->articol->title,
+						'art_data'  => $this->articol->created_at,
+						'user'      => $this->articol->user_id,
+					]);
+	}
 }
