@@ -3,16 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Article;
-
-
 use App\Mail\ArticleCreated;
 use Illuminate\Support\Facades\Mail;
 
 use App\Http\Requests\CreateArticleRequest;
 use App\Http\Controllers\Controller;
-
 use Illuminate\Http\Response;
-
 use DB;
 use App\Quotation;
 use Carbon\Carbon;
