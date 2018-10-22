@@ -31,8 +31,9 @@ class CreateArticleRequest extends FormRequest
         'image',
         'text',
         'was_sent_to_admin_email' => 'required|bool', 
-        'send_to_admin_email' => 'required|bool',
-        'user_id' => 'required',
-        'created_at' => 'required|date' ];
+        'send_to_admin_email'     => 'required|bool'
+        //'user_id' => 'required',
+        //'created_at' => 'required|date'
+         ];
     }
 }

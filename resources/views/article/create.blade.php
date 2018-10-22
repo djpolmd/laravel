@@ -20,10 +20,8 @@
 		<!-- ID Form Input -->
      <div class="row">
 		<div class="col-md-4"></div>
-			<div class="form-group">
-				
-				{!! Form::hidden('id', null) !!}
-			
+			<div class="form-group">		
+				{!! Form::hidden('id', null) !!}		
 			</div>
 		</div>
 
@@ -111,6 +109,7 @@
 			{!! Form::close() !!}
 
 					<!-- Validation field check -->
+					
 							@if ($errors->any())
 							<div class="alert alert-danger">
 								<ul>

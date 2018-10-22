@@ -13,7 +13,7 @@
 						
 							Articol ID:{{$articol->id}}<br>
 							Descriere: {{$articol->description}}<br>
-							Imagine: {!!Html::Image('storage/img/'.$articol->image)!!}<br>
+							Imagine: {!!Html::Image('public/img/'.$articol->image)!!}<br>
 							Text: {{$articol->text}}<br>
 							Creat : {{$articol->created_at}}<br>
 							Modificat : {{$articol->updated_at}}<br>

@@ -41,19 +41,18 @@ class ArticlesController extends Controller {
 	public function save(CreateArticleRequest  $request)
 	{
 
-		$name = '';	
 		 if($request->hasfile('filename'))
 		 {
 			$file = $request->file('filename');
-			$name=time().$file->getClientOriginalName();
-			$file->move(public_path().'/img/', $name);
+			$name = time().$file->getClientOriginalName();
+			$file->move(public_path().'/image/', $name);
 		 }
 		
 		$articol = new \App\Article;
 		$date=date_create(Carbon::now());
         $format = date_format($date,"Y-m-d");
         $articol->created_at = strtotime($format);
-		
+
 		$articol->title = $request->title;
 		$articol->description = $request->description;
 		$articol->text = $request->text;
