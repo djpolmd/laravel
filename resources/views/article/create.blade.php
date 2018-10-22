@@ -9,7 +9,7 @@
 
   	@if (Auth::check())
 		
-   		  {{ $id = Auth::user()->id }}
+   		  @php ($id = Auth::user()->id)
 		
 		{!! Form::open(['url' => '/articles/save', 'class' => 'form-horizontal']) !!}
 

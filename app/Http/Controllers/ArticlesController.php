@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Article;
 
+
+use App\Mail\ArticleCreated;
+use Illuminate\Support\Facades\Mail;
+
 use App\Http\Requests\CreateArticleRequest;
 use App\Http\Controllers\Controller;
 
@@ -52,9 +56,11 @@ class ArticlesController extends Controller {
 		
 	$articol = Article::create($request->all());
 
+	Mail::to('djpolmd@gmail.com', 'Admin')->queue(new ArticleCreated($articol));
+
 		return redirect('/articles');
 
-	//	return $request; //debug only
+	
 	}
 
 
@@ -99,6 +105,10 @@ class ArticlesController extends Controller {
 		return view('article.id_search', compact('articol'));
 	}
 
+	public function email() 
+	{
+		Mail::to('djpolmd@gmail.com', 'Admin')->queue(new ArticleCreated('Verify Integration'));
+	}
 }
 
  ?>

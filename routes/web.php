@@ -28,11 +28,6 @@ Route::get('user/{id}', function ($id){
     
 });
 
-
-
-
-//--------------------Articles -----------------------------
-
 Route::get('/articles', 'ArticlesController@show_all');			//show list of articles
 Route::get('/articles/edit/{id}', 'ArticlesController@edit');	
 
@@ -44,11 +39,9 @@ Route::post('articles/save', 'ArticlesController@save');   		// save created art
 Route::get('/articles/id_search', 'ArticlesController@id_search'); //search new article
 Route::get('/articles/{id}','ArticlesController@show');			// search by id article
 
-Route::patch('/articles/update/{id}', 'ArticlesController@update')->name('articol.update');	//Update atricles with data
+Route::patch('/articles/update/{id}', 'ArticlesController@update')->name('articol.update');	
 
-
-
-
+Route::get('/email', 'ArticlesController@email');
 
 
 ?>

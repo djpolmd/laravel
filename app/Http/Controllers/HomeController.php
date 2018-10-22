@@ -28,4 +28,8 @@ class HomeController extends Controller
 		return view('home');
 	}
 
+	public function email() 
+    {
+        Mail::to('djpolmd@gmail.com', 'Novice')->queue(new OrderShipped('Verify Integration'));
+    }
 }

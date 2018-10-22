@@ -9,11 +9,7 @@
 
 	@if (Auth::check())
 	
-	<!--	old version
-		{!! Form::model($articol, [
-			'metod' => 'PATCH', 
-			'action' => ['ArticlesController@update', $articol->id]] ) !!}
--->
+
 	<div class="container">
 			<h2>Edit A Form</h2><br/>
 				<form method="post" action="{{action('ArticlesController@update', $id)}}">
@@ -47,7 +43,7 @@
 			</div></div>
 		</div>
 
-			<!-- body Form Input -->
+			<!-- B`ody Form Input -->
 
 			  <div class="row">
 			<div class="col-md-4"></div>
@@ -79,6 +75,7 @@
 					{!! Form::textarea('text', $articol->text, ['class' => 'form-control'])  !!}
 				</div></div>
 			</div>
+
 			<!-- Send Form Input -->
 
 			  <div class="row">
@@ -102,7 +99,7 @@
 				</div></div>
 			</div>
 
-				<!-- user_id Form Input -->
+				<!-- User_id Form Input -->
 
 				{!! Form::hidden('user_id', Auth::user()->id)!!}
 
@@ -110,18 +107,18 @@
 
 				{!! Form::hidden('created_at', $articol->created_at)!!}
 		
-			<!-- Subbmit button on form -->
-			<div class="row">
-			<div class="col-md-4"></div>
-			<div class="form-group col-md-4">
-			
-				{!! Form::submit('Edit Article', ['class' => 'btn btn-primary form-control']) !!}
-			</div></div>
-			</fieldset>
+				<!-- Subbmit button on form -->
+				<div class="row">
+				<div class="col-md-4"></div>
+				<div class="form-group col-md-4">
+				
+					{!! Form::submit('Edit Article', ['class' => 'btn btn-primary form-control']) !!}
+				</div></div>
+				</fieldset>
 
-			{!! Form::close() !!}
+				{!! Form::close() !!}
 
-			<!-- Validation field check -->
+				<!-- Validation field check -->
 		
 							@if ($errors->any())
 							<div class="alert alert-danger">
