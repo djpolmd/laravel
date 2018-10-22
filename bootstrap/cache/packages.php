@@ -13,13 +13,6 @@
       0 => 'Laravel\\Tinker\\TinkerServiceProvider',
     ),
   ),
-  'nunomaduro/collision' => 
-  array (
-    'providers' => 
-    array (
-      0 => 'NunoMaduro\\Collision\\Adapters\\Laravel\\CollisionServiceProvider',
-    ),
-  ),
   'laravelcollective/html' => 
   array (
     'providers' => 
@@ -32,11 +25,11 @@
       'Html' => 'Collective\\Html\\HtmlFacade',
     ),
   ),
-  'jeremykenedy/laravel-users' => 
+  'nunomaduro/collision' => 
   array (
     'providers' => 
     array (
-      0 => 'jeremykenedy\\laravelusers\\LaravelUsersServiceProvider',
+      0 => 'NunoMaduro\\Collision\\Adapters\\Laravel\\CollisionServiceProvider',
     ),
   ),
 );

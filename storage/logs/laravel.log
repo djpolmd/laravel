@@ -1847,3 +1847,145 @@ Did you mean one of these?
 #50 /home/ubuntu/workspace/public/index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
 #51 {main}
 "} 
+[2018-10-22 13:46:32] local.ERROR: Class 'Illuminate\Html\HtmlServiceProvider' not found {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): Class 'Illuminate\\Html\\HtmlServiceProvider' not found at /home/dobos/laravel/laravel/vendor/laravel/framework/src/Illuminate/Foundation/ProviderRepository.php:208)
+[stacktrace]
+#0 /home/dobos/laravel/laravel/vendor/laravel/framework/src/Illuminate/Foundation/ProviderRepository.php(144): Illuminate\\Foundation\\ProviderRepository->createProvider('Illuminate\\\\Html...')
+#1 /home/dobos/laravel/laravel/vendor/laravel/framework/src/Illuminate/Foundation/ProviderRepository.php(61): Illuminate\\Foundation\\ProviderRepository->compileManifest(Array)
+#2 /home/dobos/laravel/laravel/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(548): Illuminate\\Foundation\\ProviderRepository->load(Array)
+#3 /home/dobos/laravel/laravel/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/RegisterProviders.php(17): Illuminate\\Foundation\\Application->registerConfiguredProviders()
+#4 /home/dobos/laravel/laravel/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(206): Illuminate\\Foundation\\Bootstrap\\RegisterProviders->bootstrap(Object(Illuminate\\Foundation\\Application))
+#5 /home/dobos/laravel/laravel/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(162): Illuminate\\Foundation\\Application->bootstrapWith(Array)
+#6 /home/dobos/laravel/laravel/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(146): Illuminate\\Foundation\\Http\\Kernel->bootstrap()
+#7 /home/dobos/laravel/laravel/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(116): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#8 /home/dobos/laravel/laravel/public/index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#9 /home/dobos/laravel/laravel/server.php(21): require_once('/home/dobos/lar...')
+#10 {main}
+"} 
+[2018-10-22 13:46:40] local.ERROR: Class 'Illuminate\Html\HtmlServiceProvider' not found {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): Class 'Illuminate\\Html\\HtmlServiceProvider' not found at /home/dobos/laravel/laravel/vendor/laravel/framework/src/Illuminate/Foundation/ProviderRepository.php:208)
+[stacktrace]
+#0 /home/dobos/laravel/laravel/vendor/laravel/framework/src/Illuminate/Foundation/ProviderRepository.php(144): Illuminate\\Foundation\\ProviderRepository->createProvider('Illuminate\\\\Html...')
+#1 /home/dobos/laravel/laravel/vendor/laravel/framework/src/Illuminate/Foundation/ProviderRepository.php(61): Illuminate\\Foundation\\ProviderRepository->compileManifest(Array)
+#2 /home/dobos/laravel/laravel/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(548): Illuminate\\Foundation\\ProviderRepository->load(Array)
+#3 /home/dobos/laravel/laravel/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/RegisterProviders.php(17): Illuminate\\Foundation\\Application->registerConfiguredProviders()
+#4 /home/dobos/laravel/laravel/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(206): Illuminate\\Foundation\\Bootstrap\\RegisterProviders->bootstrap(Object(Illuminate\\Foundation\\Application))
+#5 /home/dobos/laravel/laravel/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(297): Illuminate\\Foundation\\Application->bootstrapWith(Array)
+#6 /home/dobos/laravel/laravel/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(120): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#7 /home/dobos/laravel/laravel/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#8 {main}
+"} 
+[2018-10-22 13:46:49] local.ERROR: Class 'Illuminate\Html\HtmlServiceProvider' not found {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): Class 'Illuminate\\Html\\HtmlServiceProvider' not found at /home/dobos/laravel/laravel/vendor/laravel/framework/src/Illuminate/Foundation/ProviderRepository.php:208)
+[stacktrace]
+#0 /home/dobos/laravel/laravel/vendor/laravel/framework/src/Illuminate/Foundation/ProviderRepository.php(144): Illuminate\\Foundation\\ProviderRepository->createProvider('Illuminate\\\\Html...')
+#1 /home/dobos/laravel/laravel/vendor/laravel/framework/src/Illuminate/Foundation/ProviderRepository.php(61): Illuminate\\Foundation\\ProviderRepository->compileManifest(Array)
+#2 /home/dobos/laravel/laravel/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(548): Illuminate\\Foundation\\ProviderRepository->load(Array)
+#3 /home/dobos/laravel/laravel/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/RegisterProviders.php(17): Illuminate\\Foundation\\Application->registerConfiguredProviders()
+#4 /home/dobos/laravel/laravel/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(206): Illuminate\\Foundation\\Bootstrap\\RegisterProviders->bootstrap(Object(Illuminate\\Foundation\\Application))
+#5 /home/dobos/laravel/laravel/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(297): Illuminate\\Foundation\\Application->bootstrapWith(Array)
+#6 /home/dobos/laravel/laravel/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(120): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#7 /home/dobos/laravel/laravel/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#8 {main}
+"} 
+[2018-10-22 14:06:51] local.ERROR: Class 'Illuminate\Html\HtmlServiceProvider' not found {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): Class 'Illuminate\\Html\\HtmlServiceProvider' not found at /home/dobos/laravel/laravel/vendor/laravel/framework/src/Illuminate/Foundation/ProviderRepository.php:208)
+[stacktrace]
+#0 /home/dobos/laravel/laravel/vendor/laravel/framework/src/Illuminate/Foundation/ProviderRepository.php(144): Illuminate\\Foundation\\ProviderRepository->createProvider('Illuminate\\\\Html...')
+#1 /home/dobos/laravel/laravel/vendor/laravel/framework/src/Illuminate/Foundation/ProviderRepository.php(61): Illuminate\\Foundation\\ProviderRepository->compileManifest(Array)
+#2 /home/dobos/laravel/laravel/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(548): Illuminate\\Foundation\\ProviderRepository->load(Array)
+#3 /home/dobos/laravel/laravel/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/RegisterProviders.php(17): Illuminate\\Foundation\\Application->registerConfiguredProviders()
+#4 /home/dobos/laravel/laravel/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(206): Illuminate\\Foundation\\Bootstrap\\RegisterProviders->bootstrap(Object(Illuminate\\Foundation\\Application))
+#5 /home/dobos/laravel/laravel/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(297): Illuminate\\Foundation\\Application->bootstrapWith(Array)
+#6 /home/dobos/laravel/laravel/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(120): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#7 /home/dobos/laravel/laravel/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#8 {main}
+"} 
+[2018-10-22 14:09:48] local.ERROR: Class 'Illuminate\Support\Faacdes\Route' not found {"exception":"[object] (ErrorException(code: 0): Class 'Illuminate\\Support\\Faacdes\\Route' not found at /home/dobos/laravel/laravel/vendor/laravel/framework/src/Illuminate/Foundation/AliasLoader.php:80)
+[stacktrace]
+#0 [internal function]: Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(2, 'Class 'Illumina...', '/home/dobos/lar...', 80, Array)
+#1 /home/dobos/laravel/laravel/vendor/laravel/framework/src/Illuminate/Foundation/AliasLoader.php(80): class_alias('Illuminate\\\\Supp...', 'Route')
+#2 [internal function]: Illuminate\\Foundation\\AliasLoader->load('Route')
+#3 /home/dobos/laravel/laravel/routes/api.php(16): spl_autoload_call('Route')
+#4 /home/dobos/laravel/laravel/vendor/laravel/framework/src/Illuminate/Routing/Router.php(400): require('/home/dobos/lar...')
+#5 /home/dobos/laravel/laravel/vendor/laravel/framework/src/Illuminate/Routing/Router.php(356): Illuminate\\Routing\\Router->loadRoutes('/home/dobos/lar...')
+#6 /home/dobos/laravel/laravel/vendor/laravel/framework/src/Illuminate/Routing/RouteRegistrar.php(121): Illuminate\\Routing\\Router->group(Array, '/home/dobos/lar...')
+#7 /home/dobos/laravel/laravel/app/Providers/RouteServiceProvider.php(71): Illuminate\\Routing\\RouteRegistrar->group('/home/dobos/lar...')
+#8 /home/dobos/laravel/laravel/app/Providers/RouteServiceProvider.php(38): App\\Providers\\RouteServiceProvider->mapApiRoutes()
+#9 [internal function]: App\\Providers\\RouteServiceProvider->map()
+#10 /home/dobos/laravel/laravel/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(29): call_user_func_array(Array, Array)
+#11 /home/dobos/laravel/laravel/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(87): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#12 /home/dobos/laravel/laravel/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(31): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#13 /home/dobos/laravel/laravel/vendor/laravel/framework/src/Illuminate/Container/Container.php(564): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#14 /home/dobos/laravel/laravel/vendor/laravel/framework/src/Illuminate/Foundation/Support/Providers/RouteServiceProvider.php(74): Illuminate\\Container\\Container->call(Array)
+#15 /home/dobos/laravel/laravel/vendor/laravel/framework/src/Illuminate/Foundation/Support/Providers/RouteServiceProvider.php(33): Illuminate\\Foundation\\Support\\Providers\\RouteServiceProvider->loadRoutes()
+#16 /home/dobos/laravel/laravel/app/Providers/RouteServiceProvider.php(28): Illuminate\\Foundation\\Support\\Providers\\RouteServiceProvider->boot()
+#17 [internal function]: App\\Providers\\RouteServiceProvider->boot()
+#18 /home/dobos/laravel/laravel/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(29): call_user_func_array(Array, Array)
+#19 /home/dobos/laravel/laravel/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(87): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#20 /home/dobos/laravel/laravel/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(31): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#21 /home/dobos/laravel/laravel/vendor/laravel/framework/src/Illuminate/Container/Container.php(564): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#22 /home/dobos/laravel/laravel/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(794): Illuminate\\Container\\Container->call(Array)
+#23 /home/dobos/laravel/laravel/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(777): Illuminate\\Foundation\\Application->bootProvider(Object(App\\Providers\\RouteServiceProvider))
+#24 [internal function]: Illuminate\\Foundation\\Application->Illuminate\\Foundation\\{closure}(Object(App\\Providers\\RouteServiceProvider), 18)
+#25 /home/dobos/laravel/laravel/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(778): array_walk(Array, Object(Closure))
+#26 /home/dobos/laravel/laravel/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/BootProviders.php(17): Illuminate\\Foundation\\Application->boot()
+#27 /home/dobos/laravel/laravel/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(206): Illuminate\\Foundation\\Bootstrap\\BootProviders->bootstrap(Object(Illuminate\\Foundation\\Application))
+#28 /home/dobos/laravel/laravel/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(297): Illuminate\\Foundation\\Application->bootstrapWith(Array)
+#29 /home/dobos/laravel/laravel/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(120): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#30 /home/dobos/laravel/laravel/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#31 {main}
+"} 
+[2018-10-22 14:11:31] local.ERROR: Call to undefined method Illuminate\Foundation\Application::bindShared() {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): Call to undefined method Illuminate\\Foundation\\Application::bindShared() at /home/dobos/laravel/laravel/vendor/illuminate/html/HtmlServiceProvider.php:36)
+[stacktrace]
+#0 /home/dobos/laravel/laravel/vendor/illuminate/html/HtmlServiceProvider.php(21): Illuminate\\Html\\HtmlServiceProvider->registerHtmlBuilder()
+#1 /home/dobos/laravel/laravel/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(573): Illuminate\\Html\\HtmlServiceProvider->register()
+#2 /home/dobos/laravel/laravel/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(708): Illuminate\\Foundation\\Application->register(Object(Illuminate\\Html\\HtmlServiceProvider))
+#3 /home/dobos/laravel/laravel/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(688): Illuminate\\Foundation\\Application->registerDeferredProvider('Illuminate\\\\Html...', 'html')
+#4 /home/dobos/laravel/laravel/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(664): Illuminate\\Foundation\\Application->loadDeferredProvider('html')
+#5 /home/dobos/laravel/laravel/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(300): Illuminate\\Foundation\\Application->loadDeferredProviders()
+#6 /home/dobos/laravel/laravel/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(120): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#7 /home/dobos/laravel/laravel/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#8 {main}
+"} 
+[2018-10-22 14:12:25] local.ERROR: Call to undefined method Illuminate\Foundation\Application::bindShared() {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): Call to undefined method Illuminate\\Foundation\\Application::bindShared() at /home/dobos/laravel/laravel/vendor/illuminate/html/HtmlServiceProvider.php:36)
+[stacktrace]
+#0 /home/dobos/laravel/laravel/vendor/illuminate/html/HtmlServiceProvider.php(21): Illuminate\\Html\\HtmlServiceProvider->registerHtmlBuilder()
+#1 /home/dobos/laravel/laravel/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(573): Illuminate\\Html\\HtmlServiceProvider->register()
+#2 /home/dobos/laravel/laravel/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(708): Illuminate\\Foundation\\Application->register(Object(Illuminate\\Html\\HtmlServiceProvider))
+#3 /home/dobos/laravel/laravel/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(688): Illuminate\\Foundation\\Application->registerDeferredProvider('Illuminate\\\\Html...', 'html')
+#4 /home/dobos/laravel/laravel/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(664): Illuminate\\Foundation\\Application->loadDeferredProvider('html')
+#5 /home/dobos/laravel/laravel/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(300): Illuminate\\Foundation\\Application->loadDeferredProviders()
+#6 /home/dobos/laravel/laravel/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(120): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#7 /home/dobos/laravel/laravel/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#8 {main}
+"} 
+[2018-10-22 15:40:00] local.ERROR: Class 'Illuminate\Html\HtmlServiceProvider' not found {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): Class 'Illuminate\\Html\\HtmlServiceProvider' not found at /home/dobos/laravel/laravel/vendor/laravel/framework/src/Illuminate/Foundation/ProviderRepository.php:208)
+[stacktrace]
+#0 /home/dobos/laravel/laravel/vendor/laravel/framework/src/Illuminate/Foundation/ProviderRepository.php(144): Illuminate\\Foundation\\ProviderRepository->createProvider('Illuminate\\\\Html...')
+#1 /home/dobos/laravel/laravel/vendor/laravel/framework/src/Illuminate/Foundation/ProviderRepository.php(61): Illuminate\\Foundation\\ProviderRepository->compileManifest(Array)
+#2 /home/dobos/laravel/laravel/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(548): Illuminate\\Foundation\\ProviderRepository->load(Array)
+#3 /home/dobos/laravel/laravel/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/RegisterProviders.php(17): Illuminate\\Foundation\\Application->registerConfiguredProviders()
+#4 /home/dobos/laravel/laravel/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(206): Illuminate\\Foundation\\Bootstrap\\RegisterProviders->bootstrap(Object(Illuminate\\Foundation\\Application))
+#5 /home/dobos/laravel/laravel/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(297): Illuminate\\Foundation\\Application->bootstrapWith(Array)
+#6 /home/dobos/laravel/laravel/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(120): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#7 /home/dobos/laravel/laravel/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#8 {main}
+"} 
+[2018-10-22 18:43:16] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at /home/dobos/laravel/laravel/vendor/laravel/framework/src/Illuminate/Log/LogManager.php:181)
+[stacktrace]
+#0 /home/dobos/laravel/laravel/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(115): Illuminate\\Log\\LogManager->resolve(NULL)
+#1 /home/dobos/laravel/laravel/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(103): Illuminate\\Log\\LogManager->get(NULL)
+#2 /home/dobos/laravel/laravel/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(526): Illuminate\\Log\\LogManager->driver()
+#3 /home/dobos/laravel/laravel/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(113): Illuminate\\Log\\LogManager->error('syntax error, u...', Array)
+#4 /home/dobos/laravel/laravel/app/Exceptions/Handler.php(37): Illuminate\\Foundation\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalThrowableError))
+#5 /home/dobos/laravel/laravel/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(353): App\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalThrowableError))
+#6 /home/dobos/laravel/laravel/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(132): Illuminate\\Foundation\\Console\\Kernel->reportException(Object(Symfony\\Component\\Debug\\Exception\\FatalThrowableError))
+#7 /home/dobos/laravel/laravel/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#8 {main}
+"} 
+[2018-10-22 18:43:16] laravel.ERROR: syntax error, unexpected 'App' (T_STRING), expecting ']' {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): syntax error, unexpected 'App' (T_STRING), expecting ']' at /home/dobos/laravel/laravel/config/app.php:162)
+[stacktrace]
+#0 /home/dobos/laravel/laravel/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/LoadConfiguration.php(39): Illuminate\\Foundation\\Bootstrap\\LoadConfiguration->loadConfigurationFiles(Object(Illuminate\\Foundation\\Application), Object(Illuminate\\Config\\Repository))
+#1 /home/dobos/laravel/laravel/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(206): Illuminate\\Foundation\\Bootstrap\\LoadConfiguration->bootstrap(Object(Illuminate\\Foundation\\Application))
+#2 /home/dobos/laravel/laravel/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(297): Illuminate\\Foundation\\Application->bootstrapWith(Array)
+#3 /home/dobos/laravel/laravel/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(120): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#4 /home/dobos/laravel/laravel/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 

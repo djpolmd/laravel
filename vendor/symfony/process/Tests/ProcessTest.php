@@ -450,9 +450,6 @@ class ProcessTest extends TestCase
         $this->assertGreaterThan(0, $process->getExitCode());
     }
 
-    /**
-     * @group tty
-     */
     public function testTTYCommand()
     {
         if ('\\' === \DIRECTORY_SEPARATOR) {
@@ -468,9 +465,6 @@ class ProcessTest extends TestCase
         $this->assertSame(Process::STATUS_TERMINATED, $process->getStatus());
     }
 
-    /**
-     * @group tty
-     */
     public function testTTYCommandExitCode()
     {
         if ('\\' === \DIRECTORY_SEPARATOR) {
@@ -1487,9 +1481,9 @@ EOTXT;
 
     /**
      * @param string      $commandline
-     * @param null|string $cwd
-     * @param null|array  $env
-     * @param null|string $input
+     * @param string|null $cwd
+     * @param array|null  $env
+     * @param string|null $input
      * @param int         $timeout
      * @param array       $options
      *
