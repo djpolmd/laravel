@@ -19,14 +19,12 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-
-
 Route::get('user/{id}', function ($id){
     return 'User '.$id;
     return 'User '.$name;
     
 });
+Route::get('/home', 'ArticlesController@show_all')->name('home');
 
 Route::get('/articles', 'ArticlesController@show_all');			//show list of articles
 

@@ -82,20 +82,23 @@
 					Articles test page
 				</div>
 
-				<div class="links">
+				<ul class="list-group">
+					<li class="list-group-item"> 
+						<a href="articles/add">Adaugare articol : GET /articles/add  -> POST /article/save</a></li><br>
+						
+ 					  
+
+					<li class="list-group-item">
+						<a href="articles/edit/1">Editare articol : GET /articles/edit/{articles_ID}</a></li><br>
+
+					<li class="list-group-item"> Modificare articol : PATCH /articles/update/{id}</li><br>
+				   	
+					<li class="list-group-item"> 
+						<a href="/articles">Vizualiare articole (lista) : GET /articles</a>
+					<li class="list-group-item">
+						<a href="/articles/id_search">Vizualizare unui articol {ID} : GET /articles/{articles_ID} </a>
 					
-					<li><a href="articles/add">Adaugare articol : GET /articles/add  -> POST /article/save</a></li><br>
-					<li><a href="articles/edit/1">Editare articol : GET /articles/edit/{articles_ID}</a></li><br>
-				   	<li>Modificare articol : PATCH /articles/update/{id}</li><br>
-				   	<br>
-					<li><a href="/articles">Vizualiare articole (lista) : GET /articles</a>
-					</li><br>
-					<li>
-					<a href="/articles/id_search">Vizualizare unui articol {ID} : GET /articles/{articles_ID} </a>
-					</li><br>
-				</div>
-				<div> ... </div>
-				<div class="links"> <a href="/users">Lista  de utilizatori -> </a> </div>
+				</ul class="list-group">
 			</div>
 		</div>
 	</body>

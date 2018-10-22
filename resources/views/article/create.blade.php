@@ -53,7 +53,7 @@
 				<div class="form-group">
 
 				{!! Form::label('Image:','Image :')!!}
-				{!! Form::text('image','book.jpeg', ['class' => 'form-control'])  !!}
+				{!!Form::file('image', array('class' => 'form-control'))  !!}
 			</div></div>
 
 			<!-- Text Form Input -->
@@ -91,14 +91,9 @@
 
 				{!! Form::hidden('user_id', $id)!!}
 					<!-- body Form Input -->
-			 <div class="row">
-			<div class="col-md-4"></div>
+				{!! Form::hidden('created_at', '2018-10-21 20:06:33')  !!}
+			
 		
-			<div class="form-group">
-				{!! Form::label('created_at:','Created at:')!!}
-				{!! Form::input('date','created_at', date('Y-m-d: h:i:s'),['class' => 'form-control'])  !!}
-			</div> </div>
-
 			<!-- Subbmit button on form -->
 		  <div class="row">
 				<div class="col-md-4"></div>
@@ -121,7 +116,6 @@
 								</ul>
 							</div>
 						@endif
-
 			@else 
 				<H2> Please log-in:  </H2>
 			@endif

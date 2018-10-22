@@ -2,16 +2,24 @@
 
 @section('content')
 
-		<p>Article</p>
+		
+	<div class="container">
+		<div class="row">
+			<p>Article titlu: </p>
+     		<div class="col-md-10 col-md-offset-1">
+     		  	<div class="panel panel-default">
+        		  <div class="panel-heading text-justify" >
+							{{$articol->title}} </h1><br>
+						
+							Articol ID:{{$articol->id}}<br>
+							Descriere: {{$articol->description}}<br>
+							Imagine: {!!Html::Image('storage/img/'.$articol->image)!!}<br>
+							Text: {{$articol->text}}<br>
+							Creat : {{$articol->created_at}}<br>
+							Modificat : {{$articol->updated_at}}<br>
+							Trimitere emailului a fost solicitata: {{$articol->send_to_admin_email}} <br>
+							Email fost expediat catre administartor : {{$articol->was_sent_to_admin_email}}
 
-		<h1> {{$articol->title}} </h1>
-		<TABLE>
-			<TR>Articol:{{$articol->id}}</TR>
-		<TH>{{$articol->title}}<br><TD>
-			{{$articol->description}}<TD>
-			{!!Html::Image('storage/img/'.$articol->image)!!}<TD>
-			{{$articol->text}}
-					
-</TABLE>
-		<script type="text/javascript"></script>\
+	</div>
+		<script type="text/javascript"></script>
 @endsection

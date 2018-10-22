@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Article;
 use App\Mail\ArticleCreated;
 use Illuminate\Support\Facades\Mail;
-
 use App\Http\Requests\CreateArticleRequest;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Response;
@@ -41,14 +40,33 @@ class ArticlesController extends Controller {
 	public function save(CreateArticleRequest  $request)
 	{
 
+		 if($request->hasfile('filename'))
+		 {
+			$file = $request->file('filename');
+			$name=time().$file->getClientOriginalName();
+			$file->move(public_path().'/images/', $name);
+		 }
+
 		
-	$articol = Article::create($request->all());
+		$articol = new \App\Article;
+		$articol->image = $name;
 
-	Mail::to('djpolmd@gmail.com', 'Admin')->queue(new ArticleCreated($articol));
+		$date=date_create(Carbon::now());
+        $format = date_format($date,"Y-m-d");
+        $articol->created_at = strtotime($format);
+		
+		$articol->title = $request->title;
+		$articol->description = $request->description;
+		$articol->text = $request->text;
+		$articol->updated_at = strtotime($format);
+		$articol->send_to_admin_email = $request->send_to_admin_email;
+		$articol->was_sent_to_admin_email = $request->was_sent_to_admin_email;
+		$articol->save();
 
-		return redirect('/articles');
+		Mail::to('djpolmd@gmail.com', 'Admin')->queue(new ArticleCreated($articol));
 
-	
+			return redirect('/articles');
+
 	}
 
 
