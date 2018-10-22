@@ -31,24 +31,16 @@ class ArticlesController extends Controller {
 	
 	}
 	
-	// aratam toate articole existente;
-//------------------------------------
-	public function index()
-	{
-		$articol = Article::all();
-
-	return view('article.articles', compact('articol')); //variable without $ needed just in '';
-	}
-
 	public function show_all()
 	{
 		$articol = DB::table('articles')->get();
 
-	return view('article.articles', compact('articol')); //variable without $ needed just in '';
+	return view('article.articles', compact('articol')); 
+	//variable without $ needed just in '';
 
 	}
 
-// -------------Toate articole-------------------
+	// -------------Toate articole-------------------
 
 	public function save(CreateArticleRequest  $request)
 	{
@@ -66,7 +58,7 @@ class ArticlesController extends Controller {
 
 
 	// cautam articol dupa id
-//---------------------------------------
+	//---------------------------------------
 	public function show($id)
 	{
 		$articol = Article::find($id);
@@ -100,10 +92,6 @@ class ArticlesController extends Controller {
 		return view('article.edit', compact('articol','id'));
 	}
 
-	public  function id_search()
-	{
-		return view('article.id_search', compact('articol'));
-	}
 
 	public function email() 
 	{
