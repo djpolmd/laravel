@@ -73,8 +73,8 @@
 			<div class="form-group">
 
 				{!! Form::label('Send:','Send to admin email:')!!}
-				
 				{{ Form::checkbox('send_to_admin_email', true, false ) }}
+
 			</div>	</div>
 
 				<!-- Was_send Form Input -->
@@ -83,25 +83,29 @@
 					<div class="form-group">
 
 				{!! Form::label('Was_send:','If was send:')!!}
-
 				{!! Form::checkbox('was_sent_to_admin_email', true, true)  !!}
 			</div></div>
 
 				<!-- user_id Form Input -->
-
-				{!! Form::hidden('user_id', $id)!!}
-					<!-- body Form Input -->
-				{!! Form::hidden('created_at', '2018-10-21 20:06:33')  !!}
+				<div class="row">
+					<div class="form-group">
+					{!! Form::hidden('user_id', $id)!!} 
+					</div>
+				</div>
+				<!-- body Form Input -->
+				<div class="row">
+					<div class="form-group">
+					{!! Form::hidden('created_at', '2018-10-21 20:06:33')  !!}
+					</div>
+				</div>
 			
-		
 			<!-- Subbmit button on form -->
 		  <div class="row">
 				<div class="col-md-4"></div>
-		
-			<div class="form-group">
+				<div class="form-group">
 
 				{!! Form::submit('Add Article', ['class' => 'btn btn-primary form-control']) !!}
-			</div></div>
+				</div></div>
 			
 
 			{!! Form::close() !!}

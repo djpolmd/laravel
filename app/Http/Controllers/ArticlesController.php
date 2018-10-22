@@ -11,6 +11,9 @@ use Illuminate\Http\Response;
 use DB;
 use App\Quotation;
 use Carbon\Carbon;
+use App\User;
+use Auth;
+
 
 class ArticlesController extends Controller {
 
@@ -21,18 +24,16 @@ class ArticlesController extends Controller {
 
 	return view('article.create', compact('articol'));
 
-	$input['published_at'] = Carbon::now();
-	$input['updated_at'] = Carbon::now();
-	
+		$input['published_at'] = Carbon::now();
+		$input['updated_at'] = Carbon::now();
+		
 	}
 	
 	public function show_all()
 	{
 		$articol = DB::table('articles')->get();
-
-	return view('article.articles', compact('articol')); 
+		return view('article.articles', compact('articol')); 
 	//variable without $ needed just in '';
-
 	}
 
 	// -------------Toate articole-------------------
@@ -40,17 +41,15 @@ class ArticlesController extends Controller {
 	public function save(CreateArticleRequest  $request)
 	{
 
+		$name = '';	
 		 if($request->hasfile('filename'))
 		 {
 			$file = $request->file('filename');
 			$name=time().$file->getClientOriginalName();
-			$file->move(public_path().'/images/', $name);
+			$file->move(public_path().'/img/', $name);
 		 }
-
 		
 		$articol = new \App\Article;
-		$articol->image = $name;
-
 		$date=date_create(Carbon::now());
         $format = date_format($date,"Y-m-d");
         $articol->created_at = strtotime($format);
@@ -61,37 +60,31 @@ class ArticlesController extends Controller {
 		$articol->updated_at = strtotime($format);
 		$articol->send_to_admin_email = $request->send_to_admin_email;
 		$articol->was_sent_to_admin_email = $request->was_sent_to_admin_email;
+		$articol->user_id = Auth::user()->id;
+		$articol->image = $name;
 		$articol->save();
-
 		Mail::to('djpolmd@gmail.com', 'Admin')->queue(new ArticleCreated($articol));
-
 			return redirect('/articles');
 
 	}
-
-
 
 	// cautam articol dupa id
 	//---------------------------------------
 	public function show($id)
 	{
-		$articol = Article::find($id);
-
+		$articol = \App\Article::find($id);
 		return view('article.show',compact('articol'));
-
-	
 	}
 
 	public function update(CreateArticleRequest $request, $id)
 	{
 		$articol = Article::find($id);
-
 		$articol->title = $request->get('title');
 		$articol->description = $request->get('description');
 		$articol->image = $request->get('image');
 		$articol->text = $request->get('text');
 		$articol->created_at = $request->created_at;
-
+		$articol->user_id = Auth::user()->id;
 		$articol->save();
 	return redirect('/articles');
 	}
