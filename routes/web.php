@@ -21,6 +21,12 @@ Route::resource('articol','ArtController')->only(['store']);
 
 Auth::routes();
 
+Route::get('user/{id}', function ($id){
+    return 'User '.$id;
+    return 'User '.$name;
+    
+});
+
 
 Route::get('/home', 'ArtController@index')->name('home');
 

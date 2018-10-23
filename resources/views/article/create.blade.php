@@ -62,26 +62,21 @@
 
 			<!-- Send Form Input -->
 
-			  <div class="row">
-			<div class="col-md-4"></div>
-			<div class="form-group col-md-4">
-					{!! Form::label('Send:','Send to admin email:')!!}					
-				<div class="input-group">
-					{{ Form::checkbox('send_to_admin_email', false, false ) }}
-				</div></div>
-			</div>	
+			<div class="row">
+				<div class="col-md-4"></div>
+			       <input type="checkbox" id="send_to_admin_email" name="send_to_admin_email"
+			               value="true" checked />
+			        <label for="send_to_admin_email">Send to admin an email</label>
+			    </div>
 
 				<!-- Was_send Form Input -->
 
-			  <div class="row">
-			<div class="col-md-4"></div>
-			<div class="form-group col-md-4">
-				{!! Form::label('Was_send:','If was send:')!!}
-				<div class="input-group">
-
-				{!! Form::checkbox('was_sent_to_admin_email', false, true)  !!}
-				</div></div>
-			</div>
+			<div class="row">
+				<div class="col-md-4"></div>
+			       <input type="checkbox" id="was_sent_to_admin_email" name="was_sent_to_admin_email"
+			               value="false" checked />
+			        <label for="was_sent_to_admin_email">was_sent_to_admin_email</label>
+			    </div>
 
 				
 				<!-- Subbmit button on form -->

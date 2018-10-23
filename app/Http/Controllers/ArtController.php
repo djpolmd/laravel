@@ -48,13 +48,13 @@ class ArtController extends Controller
 	public function store(Request $request)
 	
 	{
-		 $name = $request->filename;
+		
 		 if($request->hasFile('filename'))
 		 {
 			$file = $request->file('filename');
 			$name = time().$file->getClientOriginalName();
 			$file->move(public_path().'/image/', $name);
-		 return $name;
+		
 		 }
 		
 		$articol = new \App\Articol;
