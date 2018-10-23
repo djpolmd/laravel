@@ -9,107 +9,94 @@
 
   	@if (Auth::check())
 		
-   		  @php ($id = Auth::user()->id)
-		
-		{!! Form::open(['url' => '/articles/save', 'class' => 'form-horizontal']) !!}
 
-	<fieldset>
- 
-		<legend>Create New Article</legend>
+	<div class="container">
+			<h2>Edit A Form</h2><br/>
+				<form method="post" action="{{action('ArtController@store')}}" enctype="multipart/form-data">
+				@csrf
 
-		<!-- ID Form Input -->
-     <div class="row">
-		<div class="col-md-4"></div>
-			<div class="form-group">		
-				{!! Form::hidden('id', null) !!}		
-			</div>
+  	
+			<!--'Title Form Input -->
+
+		  <div class="row">
+			<div class="col-md-4"></div>
+			<div class="form-group col-md-4">
+				{!! Form::label('Title:','Enter Title:')!!}
+			<div class="input-group">
+
+				{!! Form::text('title', 'Enter title' , ['class' => 'form-control'])  !!}
+
+			</div></div>
 		</div>
 
-	
-			<!--'Title Form Input -->
-		  <div class="row">
-				<div class="col-md-4"></div>
-				
-			<div class="form-group">
+			<!-- B`ody Form Input -->
 
-				{!! Form::label('Title:','Enter Title:')!!}
-				{!! Form::text('title','Enter title', ['class' => 'form-control'])  !!}
-			</div></div>
-			<!-- body Form Input -->
-		  <div class="row">
-				<div class="col-md-4"></div>
-				
-			<div class="form-group"> 
-
-				{!! Form::label('Description:','Description:')!!}
-				{!! Form::textarea('description','lorem ipsum', ['class' => 'form-control'])  !!}
-			</div></div>
-				<!-- Image Form Input -->
-
-		  <div class="row">
-				<div class="col-md-4"></div>
-				<div class="form-group">
-
-				{!! Form::label('Image:','Image :')!!}
-				{!!Form::file('image', array('class' => 'form-control'))  !!}
-			</div></div>
-
-			<!-- Text Form Input -->
 			  <div class="row">
 			<div class="col-md-4"></div>
-		
-			<div class="form-group">
+			<div class="form-group col-md-4">
+					{!! Form::label('Description:','Description:')!!}
+				<div class="input-group">
+					{!! Form::textarea('description', 'Enter Description', ['class' => 'form-control'])  !!}
+				</div></div>
+			</div>
 
-				{!! Form::label('Text:','Text')!!}
-				{!! Form::textarea('text','null', ['class' => 'form-control'])  !!}
-			</div></div>
+			<!-- Image Form Input -->
+
+		  <div class="row">
+					<div class="col-md-4"></div>
+					<div class="form-group col-md-4">
+						<input type="file" name="filename">    
+				 </div>
+				</div>
+
+			<!-- Text Form Input -->
+
+			  <div class="row">
+			<div class="col-md-4"></div>
+			<div class="form-group col-md-4">
+					{!! Form::label('Text:','Text')!!}
+				<div class="input-group">
+					{!! Form::textarea('text', 'some text', ['class' => 'form-control'])  !!}
+				</div></div>
+			</div>
 
 			<!-- Send Form Input -->
+
 			  <div class="row">
-				<div class="col-md-4"></div>
-		
-			<div class="form-group">
-
-				{!! Form::label('Send:','Send to admin email:')!!}
-				{{ Form::checkbox('send_to_admin_email', true, false ) }}
-
-			</div>	</div>
+			<div class="col-md-4"></div>
+			<div class="form-group col-md-4">
+					{!! Form::label('Send:','Send to admin email:')!!}					
+				<div class="input-group">
+					{{ Form::checkbox('send_to_admin_email', false, false ) }}
+				</div></div>
+			</div>	
 
 				<!-- Was_send Form Input -->
-			<div class="row">
-				<div class="col-md-4"></div>
-					<div class="form-group">
 
+			  <div class="row">
+			<div class="col-md-4"></div>
+			<div class="form-group col-md-4">
 				{!! Form::label('Was_send:','If was send:')!!}
-				{!! Form::checkbox('was_sent_to_admin_email', true, true)  !!}
-			</div></div>
+				<div class="input-group">
 
-				<!-- user_id Form Input -->
-				<div class="row">
-					<div class="form-group">
-					{!! Form::hidden('user_id', $id)!!} 
-					</div>
-				</div>
-				<!-- body Form Input -->
-				<div class="row">
-					<div class="form-group">
-					{!! Form::hidden('created_at', '2018-10-21 20:06:33')  !!}
-					</div>
-				</div>
-			
-			<!-- Subbmit button on form -->
-		  <div class="row">
-				<div class="col-md-4"></div>
-				<div class="form-group">
-
-				{!! Form::submit('Add Article', ['class' => 'btn btn-primary form-control']) !!}
+				{!! Form::checkbox('was_sent_to_admin_email', false, true)  !!}
 				</div></div>
-			
+			</div>
 
-			{!! Form::close() !!}
+				
+				<!-- Subbmit button on form -->
+				<div class="row">
+				<div class="col-md-4"></div>
+				<div class="form-group col-md-4">
+				
+					{!! Form::submit('Edit Article', ['class' => 'btn btn-primary form-control']) !!}
+				</div></div>
+				</fieldset>
 
-					<!-- Validation field check -->
-					
+				{!! Form::close() !!}
+
+				<!-- Validation field check -->
+		
 							@if ($errors->any())
 							<div class="alert alert-danger">
 								<ul>
@@ -119,8 +106,9 @@
 								</ul>
 							</div>
 						@endif
+
 			@else 
-				<H2> Please log-in:  </H2>
+				<H2> Please log-in </H2>
 			@endif
 
 		<!-- Error message if some wrong -->

@@ -2,7 +2,7 @@
 
 namespace App\Mail;
 
-use App\Article;
+use App\Articol;
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
@@ -21,7 +21,7 @@ class ArticleCreated extends Mailable
 	 *
 	 * @return void
 	 */
-	public function __construct(Article $articol)
+	public function __construct(Articol $articol)
 	{
 		$this->articol = $articol; 
 

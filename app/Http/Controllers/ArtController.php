@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 namespace App\Http\Controllers;
 
@@ -13,45 +13,54 @@ use App\Quotation;
 use Carbon\Carbon;
 use App\User;
 use Auth;
+use Illuminate\Http\Request;
 
-
-class ArticlesController extends Controller {
-
-	 // adaugam un articol in lista
-
-	public function add()
-	{
-
-	return view('article.create', compact('articol'));
-
-		$input['published_at'] = Carbon::now();
-		$input['updated_at'] = Carbon::now();
-		
-	}
-	
-	public function show_all()
+class ArtController extends Controller
+{
+	/**
+	 * Display a listing of the resource.
+	 *
+	 * @return \Illuminate\Http\Response
+	 */
+	public function index()
 	{
 		$articol = DB::table('articles')->get();
 		return view('article.articles', compact('articol')); 
-	//variable without $ needed just in '';
 	}
 
-	// -------------Toate articole-------------------
-
-	public function save(CreateArticleRequest  $request)
+	/**
+	 * Show the form for creating a new resource.
+	 *
+	 * @return \Illuminate\Http\Response
+	 */
+	public function create()
 	{
+		return view('article.create', compact('articol'));
+	}
 
-		 if($request->hasfile('filename'))
+	/**
+	 * Store a newly created resource in storage.
+	 *
+	 * @param  \Illuminate\Http\Request  $request
+	 * @return \Illuminate\Http\Response
+	 */
+	
+	public function store(Request $request)
+	
+	{
+		 $name = $request->filename;
+		 if($request->hasFile('filename'))
 		 {
 			$file = $request->file('filename');
 			$name = time().$file->getClientOriginalName();
 			$file->move(public_path().'/image/', $name);
+		 return $name;
 		 }
 		
-		$articol = new \App\Article;
+		$articol = new \App\Articol;
 		$date=date_create(Carbon::now());
-        $format = date_format($date,"Y-m-d");
-        $articol->created_at = strtotime($format);
+		$format = date_format($date,"Y-m-d");
+		$articol->created_at = strtotime($format);
 
 		$articol->title = $request->title;
 		$articol->description = $request->description;
@@ -64,17 +73,42 @@ class ArticlesController extends Controller {
 		$articol->save();
 		Mail::to('djpolmd@gmail.com', 'Admin')->queue(new ArticleCreated($articol));
 			return redirect('/articles');
-
 	}
 
-	// cautam articol dupa id
-	//---------------------------------------
+	/**
+	 * Display the specified resource.
+	 *
+	 * @param  int  $id
+	 * @return \Illuminate\Http\Response
+	 */
 	public function show($id)
 	{
-		$articol = \App\Article::find($id);
+		$articol = Articol::find($id);
+		if ($articol)
 		return view('article.show',compact('articol'));
+		else return 'No such article! Go back';
 	}
 
+	/**
+	 * Show the form for editing the specified resource.
+	 *
+	 * @param  int  $id
+	 * @return \Illuminate\Http\Response
+	 */
+	public function edit($id)
+	{
+		$articol = Articol::findOrFail($id);
+		return view('article.edit', compact('articol','id'));
+	}
+
+	/**
+	 * Update the specified resource in storage.
+	 *
+	 * @param  \Illuminate\Http\Request  $request
+	 * @param  int  $id
+	 * @return \Illuminate\Http\Response
+	 */
+	
 	public function update(CreateArticleRequest $request, $id)
 	{
 		$articol = Article::find($id);
@@ -87,22 +121,12 @@ class ArticlesController extends Controller {
 		$articol->save();
 	return redirect('/articles');
 	}
-	
 
-	public function edit($id)
-	{
-		$articol = Article::findOrFail($id);
 
-		//return $articol;
-
-		return view('article.edit', compact('articol','id'));
-	}
-
+	// adaugam un articol in lista
 
 	public function email() 
 	{
 		Mail::to('djpolmd@gmail.com', 'Admin')->queue(new ArticleCreated('Verify Integration'));
 	}
 }
-
- ?>

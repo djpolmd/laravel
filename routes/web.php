@@ -17,30 +17,24 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::resource('articol','ArtController')->only(['store']);
+
 Auth::routes();
 
-Route::get('user/{id}', function ($id){
-    return 'User '.$id;
-    return 'User '.$name;
-    
-});
-Route::get('/home', 'ArticlesController@show_all')->name('home');
 
-Route::get('/articles', 'ArticlesController@show_all');			//show list of articles
+Route::get('/home', 'ArtController@index')->name('home');
 
-Route::get('/articles/edit/{id}', 'ArticlesController@edit');	
+Route::get('/articles', 'ArtController@index');			//show list of articles
 
-Route::get('/articles/add','ArticlesController@add'); 			// adding new article 
+Route::get('/articles/edit/{id}', 'ArtController@edit');	
 
+Route::get('/articles/add','ArtController@create'); 			// adding new article 
 
+Route::get('/articles/{id}','ArtController@show');			// search by id article
 
-Route::post('articles/save', 'ArticlesController@save');   		// save created article with funtion (store
+Route::patch('/articles/update/{id}', 'ArtController@update')->name('articol.update');	
 
-Route::get('/articles/{id}','ArticlesController@show');			// search by id article
-
-Route::patch('/articles/update/{id}', 'ArticlesController@update')->name('articol.update');	
-
-Route::get('/email', 'ArticlesController@email');
+Route::get('/email', 'ArtController@email');
 
 
 ?>
