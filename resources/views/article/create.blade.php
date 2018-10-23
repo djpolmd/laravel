@@ -9,7 +9,6 @@
 
   	@if (Auth::check())
 		
-
 	<div class="container">
 			<h2>Edit A Form</h2><br/>
 				<form method="post" action="{{action('ArtController@store')}}" enctype="multipart/form-data">
@@ -74,7 +73,7 @@
 			<div class="row">
 				<div class="col-md-4"></div>
 			       <input type="checkbox" id="was_sent_to_admin_email" name="was_sent_to_admin_email"
-			               value="false" checked />
+			               value="true" checked />
 			        <label for="was_sent_to_admin_email">was_sent_to_admin_email</label>
 			    </div>
 
@@ -84,7 +83,7 @@
 				<div class="col-md-4"></div>
 				<div class="form-group col-md-4">
 				
-					{!! Form::submit('Edit Article', ['class' => 'btn btn-primary form-control']) !!}
+					{!! Form::submit('Add Article', ['class' => 'btn btn-primary form-control']) !!}
 				</div></div>
 				</fieldset>
 

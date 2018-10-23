@@ -24,7 +24,7 @@ class ArtController extends Controller
 	 */
 	public function index()
 	{
-		$articol = DB::table('articles')->get();
+		$articol = DB::table('articols')->get();
 		return view('article.articles', compact('articol')); 
 	}
 
@@ -35,7 +35,9 @@ class ArtController extends Controller
 	 */
 	public function create()
 	{
+		if (Auth::check())
 		return view('article.create', compact('articol'));
+		else return view('auth.login');
 	}
 
 	/**
@@ -54,26 +56,25 @@ class ArtController extends Controller
 			$file = $request->file('filename');
 			$name = time().$file->getClientOriginalName();
 			$file->move(public_path().'/image/', $name);
-		
 		 }
 		
-		$articol = new \App\Articol;
-		$date=date_create(Carbon::now());
-		$format = date_format($date,"Y-m-d");
-		$articol->created_at = strtotime($format);
+			$articol = new \App\Articol;
+			$date=date_create(Carbon::now());
+			$format = date_format($date,"Y-m-d");
+			$articol->created_at = strtotime($format);
 
-		$articol->title = $request->title;
-		$articol->description = $request->description;
-		$articol->text = $request->text;
-		$articol->updated_at = strtotime($format);
-		$articol->send_to_admin_email = $request->send_to_admin_email;
-		$articol->was_sent_to_admin_email = $request->was_sent_to_admin_email;
-		$articol->user_id = Auth::user()->id;
-		$articol->image = $name;
-		$articol->save();
-		Mail::to('djpolmd@gmail.com', 'Admin')->queue(new ArticleCreated($articol));
-			return redirect('/articles');
-	}
+			$articol->title = $request->title;
+			$articol->description = $request->description;
+			$articol->text = $request->text;
+			$articol->updated_at = strtotime($format);
+			$articol->send_to_admin_email = (int)$request->send_to_admin_email;
+			$articol->was_sent_to_admin_email = (int)$request->was_sent_to_admin_email;
+			$articol->user_id = Auth::user()->id;
+			$articol->image = $name;
+			$articol->save();
+			Mail::to('djpolmd@gmail.com', 'Admin')->queue(new ArticleCreated($articol));
+				return redirect('/articles');
+		}
 
 	/**
 	 * Display the specified resource.
@@ -83,9 +84,11 @@ class ArtController extends Controller
 	 */
 	public function show($id)
 	{
-		$articol = Articol::find($id);
+		
+		$articol = \App\Articol::find($id);
 		if ($articol)
-		return view('article.show',compact('articol'));
+			return view('article.show',compact('articol'));
+		
 		else return 'No such article! Go back';
 	}
 
@@ -97,8 +100,12 @@ class ArtController extends Controller
 	 */
 	public function edit($id)
 	{
-		$articol = Articol::findOrFail($id);
-		return view('article.edit', compact('articol','id'));
+		if (Auth::check()){
+
+			$articol = Articol::findOrFail($id);
+			return view('article.edit', compact('articol','id'));
+		}
+		else return view('auth.login');
 	}
 
 	/**
@@ -111,15 +118,19 @@ class ArtController extends Controller
 	
 	public function update(CreateArticleRequest $request, $id)
 	{
-		$articol = Article::find($id);
-		$articol->title = $request->get('title');
-		$articol->description = $request->get('description');
-		$articol->image = $request->get('image');
-		$articol->text = $request->get('text');
-		$articol->created_at = $request->created_at;
-		$articol->user_id = Auth::user()->id;
-		$articol->save();
-	return redirect('/articles');
+		if (Auth::check()){
+
+			$articol = Article::find($id);
+			$articol->title = $request->get('title');
+			$articol->description = $request->get('description');
+			$articol->image = $request->get('image');
+			$articol->text = $request->get('text');
+			$articol->created_at = $request->created_at;
+			$articol->user_id = Auth::user()->id;
+			$articol->save();
+		return redirect('/articles');
+		}
+		else return view('auth.login');
 	}
 
 

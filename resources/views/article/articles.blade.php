@@ -15,8 +15,10 @@
 			@foreach ($articol as $art)
 					<TR><TH><a href="{{ url('/articles',$art->id) }}"> {{$art->title}} <br> 
 						{{$art->created_at}} </a>
-					<TD>{{$art->description}}<TD> {{$art->image}}
-						{!!Html::Image('storage/img/'.$art->image)!!}<TD>{{$art->text}}
+					<TD>{{$art->description}}
+					<TD> {{$art->image}}<br>
+						 <img src = {{ asset('/image/'.$art->image) }} alt=asset{{$art->image}} height="74" width="74" >
+					<TD>{{$art->text}}
 					<TD>{{$art->created_at}}<br>
 					<TD>{{$art->updated_at}}<br>
 					<TD>{{$art->send_to_admin_email}} <br>
