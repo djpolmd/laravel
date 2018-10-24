@@ -13,8 +13,11 @@
 					<TH rowspan="2">Titlu<BR>Descrierea
 					<TR><TH>text<TH>Imagine<TH>Created at<TH>Updated:<TH>Send<TH>Was Send <TH> User ID <TH>
 			@foreach ($articol as $art)
-					<TR><TH><a href="{{ url('/articles',$art->id) }}"> {{$art->title}} <br> 
+					<TR><TH><a href="{{ url('/articles',$art->id) }}"> 
+						ID: {{$art->id}} 	 <br>
+							{{$art->title}}  <br> 						
 						{{$art->created_at}} </a>
+						}
 					<TD>{{$art->description}}
 					<TD> {{$art->image}}<br>
 						 <img src = {{ asset('/image/'.$art->image) }} alt=asset{{$art->image}} height="74" width="74" >

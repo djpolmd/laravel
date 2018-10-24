@@ -10,7 +10,7 @@
   	@if (Auth::check())
 		
 	<div class="container">
-			<h2>Edit A Form</h2><br/>
+			<h2>Add new Articles</h2><br/>
 				<form method="post" action="{{action('ArtController@store')}}" enctype="multipart/form-data">
 				@csrf
 
@@ -28,7 +28,7 @@
 			</div></div>
 		</div>
 
-			<!-- B`ody Form Input -->
+			<!-- Body Form Input -->
 
 			  <div class="row">
 			<div class="col-md-4"></div>

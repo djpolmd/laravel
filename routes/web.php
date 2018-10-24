@@ -17,7 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('articol','ArtController')->only(['store']);
+Route::resource('articol','ArtController')->only(['store','update']);
 
 Auth::routes();
 

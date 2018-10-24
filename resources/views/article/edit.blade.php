@@ -12,7 +12,7 @@
 
 	<div class="container">
 			<h2>Edit A Form</h2><br/>
-				<form method="post" action="{{action('ArticlesController@update', $id)}}">
+				<form method="post" action="{{action('ArtController@update', $id)}}">
 				@csrf
 				<input name="_method" type="hidden" value="PATCH">
 

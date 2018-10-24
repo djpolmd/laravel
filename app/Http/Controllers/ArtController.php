@@ -102,7 +102,7 @@ class ArtController extends Controller
 	{
 		if (Auth::check()){
 
-			$articol = Articol::findOrFail($id);
+			$articol = \App\Articol::findOrFail($id);
 			return view('article.edit', compact('articol','id'));
 		}
 		else return view('auth.login');
@@ -120,7 +120,7 @@ class ArtController extends Controller
 	{
 		if (Auth::check()){
 
-			$articol = Article::find($id);
+			$articol = \App\Articol::findOrFail($id);
 			$articol->title = $request->get('title');
 			$articol->description = $request->get('description');
 			$articol->image = $request->get('image');
