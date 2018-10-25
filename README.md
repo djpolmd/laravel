@@ -28,3 +28,7 @@ Vizualizare articol cu toate detaliile articolului<br>
 GET /articles/<articol_id><br>
 <br>
 ****La fiecare adaugare sau modificare a unui articol, daca checkbox este selectat pentru a notifica administratorul sa fie trimis pe email administatorului (administrator@site.com ) o notificare ca a fost adaugat sau salvat un articol + detalii despre articol + url catre articol cu JobsEvent(Queue).
+
+<H3>Cind cream un articol email automat este livrat catre email setat in .env (pentru asta va trebui setat smpt server:local sau in cazul meu am folosit smpt sendgrid ca sa monotorizez statistica in test)  </H3>
+
+<img src="sendgrid.png">
