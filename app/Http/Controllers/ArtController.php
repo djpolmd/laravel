@@ -17,22 +17,13 @@ use Illuminate\Http\Request;
 
 class ArtController extends Controller
 {
-	/**
-	 * Display a listing of the resource.
-	 *
-	 * @return \Illuminate\Http\Response
-	 */
+	
 	public function index()
 	{
 		$articol = DB::table('articols')->get();
 		return view('article.articles', compact('articol')); 
 	}
 
-	/**
-	 * Show the form for creating a new resource.
-	 *
-	 * @return \Illuminate\Http\Response
-	 */
 	public function create()
 	{
 		if (Auth::check())
@@ -40,13 +31,7 @@ class ArtController extends Controller
 		else return view('auth.login');
 	}
 
-	/**
-	 * Store a newly created resource in storage.
-	 *
-	 * @param  \Illuminate\Http\Request  $request
-	 * @return \Illuminate\Http\Response
-	 */
-	
+	 
 	public function store(Request $request)
 	
 	{
@@ -72,16 +57,11 @@ class ArtController extends Controller
 			$articol->user_id = Auth::user()->id;
 			$articol->image = $name;
 			$articol->save();
+			
 			Mail::to('djpolmd@gmail.com', 'Admin')->queue(new ArticleCreated($articol));
 				return redirect('/articles');
 		}
 
-	/**
-	 * Display the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return \Illuminate\Http\Response
-	 */
 	public function show($id)
 	{
 		
@@ -92,12 +72,6 @@ class ArtController extends Controller
 		else return 'No such article! Go back';
 	}
 
-	/**
-	 * Show the form for editing the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return \Illuminate\Http\Response
-	 */
 	public function edit($id)
 	{
 		if (Auth::check()){
@@ -108,14 +82,6 @@ class ArtController extends Controller
 		else return view('auth.login');
 	}
 
-	/**
-	 * Update the specified resource in storage.
-	 *
-	 * @param  \Illuminate\Http\Request  $request
-	 * @param  int  $id
-	 * @return \Illuminate\Http\Response
-	 */
-	
 	public function update(CreateArticleRequest $request, $id)
 	{
 		if (Auth::check()){

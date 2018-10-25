@@ -28,19 +28,19 @@ Route::get('user/{id}', function ($id){
 });
 
 
-Route::get('/home', 'ArtController@index')->name('home');
+	Route::get('/home', 'ArtController@index')->name('home');
 
-Route::get('/articles', 'ArtController@index');			//show list of articles
+	Route::get('/articles', 'ArtController@index');					//show list of articles
 
-Route::get('/articles/edit/{id}', 'ArtController@edit');	
+	Route::get('/articles/edit/{id}', 'ArtController@edit');	
 
-Route::get('/articles/add','ArtController@create'); 			// adding new article 
+	Route::get('/articles/add','ArtController@create'); 			// adding new article 
 
-Route::get('/articles/{id}','ArtController@show');			// search by id article
+	Route::get('/articles/{id}','ArtController@show');				// search by id article
 
-Route::patch('/articles/update/{id}', 'ArtController@update')->name('articol.update');	
+	Route::patch('/articles/update/{id}', 'ArtController@update')->name('articol.update');	
 
-Route::get('/email', 'ArtController@email');
+	Route::get('/email', 'ArtController@email');
 
 
 ?>

@@ -16,25 +16,17 @@ class ArticleCreated extends Mailable
 
 	public  $articol;
 
-	/**
-	 * Create a new message instance.
-	 *
-	 * @return void
-	 */
+
 	public function __construct(Articol $articol)
 	{
 		$this->articol = $articol; 
 
 	}
 
-	/**
-	 * Build the message.
-	 *
-	 * @return $this
-	 */
+
 	public function build()
 	{
-		return $this->markdown('admin.emails.articlecreated')->from('test@test.com')
+		return $this->markdown('admin.emails.articlecreated')->from('website@test.com')
 		->with([
 						'art_id' 	=> $this->articol->id,
 						'art_title' => $this->articol->title,
