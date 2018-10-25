@@ -41,7 +41,9 @@ class ArtController extends Controller
 			$file = $request->file('filename');
 			$name = time().$file->getClientOriginalName();
 			$file->move(public_path().'/image/', $name);
-		 }
+		 } 
+		    else 
+		    	return redirect()->back()->withErrors(['OPS:', 'Introdu o imagine']);
 			
 			$articol = new \App\Articol;
 			$date=date_create(Carbon::now());
@@ -63,19 +65,16 @@ class ArtController extends Controller
 					$articol->send_to_admin_email = 1;
 					$articol->was_sent_to_admin_email = 1;
 					$articol->save();
-					Mail::to('djpolmd@gmail.com', 'Admin')->queue(new ArticleCreated($articol));
+					Mail::to('djpolmd@gmail.com', 'New article added')->queue(new ArticleCreated($articol));
 					$mesaga = ' Email trimis cu succes';
 					 	 
 				}
 				else {  
 						$articol->send_to_admin_email = 0;						
 						$mesaga= ' Ati abondonat optiunea trimitere email';
-						
+						$articol->save();
 					}
 
-					$articol->save();
-		
-					
 			return view('message', compact('mesaga'));
 		}
 
@@ -114,13 +113,5 @@ class ArtController extends Controller
 		return redirect('/articles');
 		}
 		else return view('auth.login');
-	}
-
-
-	// adaugam un articol in lista
-
-	public function email() 
-	{
-		Mail::to('djpolmd@gmail.com', 'Admin')->queue(new ArticleCreated('Verify Integration'));
 	}
 }

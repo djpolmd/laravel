@@ -83,18 +83,17 @@
 				</div>
 
 				<ul class="list-group">
-					<li class="list-group-item"> 
+
+				<li class="list-group-item"> 
+					<a href="/articles">			Vizualiare articole (lista) : GET /articles &nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</a></li><br>
+				<li class="list-group-item"> 
 					<a href="articles/add">			Adaugare articol : GET /articles/add  -> POST /article/save</a></li><br>
+				<li class="list-group-item">
+					<a href="articles/edit/1">		Editare articol : GET /articles/edit/{articles_ID} -></a></li><br>
 
-					<li class="list-group-item">
-					<a href="articles/edit/1">		Editare articol : GET /articles/edit/{articles_ID}</a></li><br>
-
-					<li class="list-group-item"> 	Modificare articol : PATCH /articles/update/{id}</li><br>
-					
-					<li class="list-group-item"> 
-					<a href="/articles">			Vizualiare articole (lista) : GET /articles</a>
-					<li class="list-group-item">
-					<a href="/articles/id_search">	Vizualizare unui articol {ID} : GET /articles/{articles_ID} </a>
+				<li class="list-group-item"> 	Modificare articol : PATCH /articles/update/{id}</li><br>
+				<li class="list-group-item">
+					<a href="/articles/id_search">	Vizualizare unui articol {ID} : GET /articles/{articles_ID} </a></li>
 					
 				</ul class="list-group">
 			</div>

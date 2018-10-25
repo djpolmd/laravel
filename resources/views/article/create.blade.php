@@ -23,7 +23,7 @@
 				{!! Form::label('Title:','Enter Title:')!!}
 			<div class="input-group">
 
-				{!! Form::text('title', 'Enter title' , ['class' => 'form-control'])  !!}
+				{!! Form::text('title', null , ['class' => 'form-control'])  !!}
 
 			</div></div>
 		</div>
@@ -35,7 +35,7 @@
 			<div class="form-group col-md-4">
 					{!! Form::label('Description:','Description:')!!}
 				<div class="input-group">
-					{!! Form::textarea('description', 'Enter Description', ['class' => 'form-control'])  !!}
+					{!! Form::textarea('description', null, ['class' => 'form-control'])  !!}
 				</div></div>
 			</div>
 
@@ -55,7 +55,7 @@
 			<div class="form-group col-md-4">
 					{!! Form::label('Text:','Text')!!}
 				<div class="input-group">
-					{!! Form::textarea('text', 'some text', ['class' => 'form-control'])  !!}
+					{!! Form::textarea('text', null, ['class' => 'form-control'])  !!}
 				</div></div>
 			</div>
 
