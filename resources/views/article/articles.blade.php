@@ -11,13 +11,14 @@
 					
 					<thead>
 					<th>Titlu <br> Descrierea </th>
-						<th>text 			</th>
+						<th>Text 			</th>
 						<th>Imagine 		</th>
+						<th>Details     	</th>
 						<th>Created     	</th>	
 						<th>Updated:    	</th>
 						<th>Send to admin   </th>
 						<th>Was Send        </th>
-						<th> User ID       </th>
+						<th>User ID       </th>
 						</thead>
 						
 						<tbody>

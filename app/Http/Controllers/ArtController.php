@@ -42,7 +42,7 @@ class ArtController extends Controller
 			$name = time().$file->getClientOriginalName();
 			$file->move(public_path().'/image/', $name);
 		 }
-		
+			
 			$articol = new \App\Articol;
 			$date=date_create(Carbon::now());
 			$format = date_format($date,"Y-m-d");
@@ -52,14 +52,31 @@ class ArtController extends Controller
 			$articol->description = $request->description;
 			$articol->text = $request->text;
 			$articol->updated_at = strtotime($format);
-			$articol->send_to_admin_email = (int)$request->send_to_admin_email;
-			$articol->was_sent_to_admin_email = (int)$request->was_sent_to_admin_email;
+			$send_bool = $request->send_to_admin_email;
+			$articol->was_sent_to_admin_email = 0; //by defaut = false (wasn't send);
 			$articol->user_id = Auth::user()->id;
 			$articol->image = $name;
-			$articol->save();
 			
-			Mail::to('djpolmd@gmail.com', 'Admin')->queue(new ArticleCreated($articol));
-				return redirect('/articles');
+				if ($send_bool === 'yes'){
+					
+
+					$articol->send_to_admin_email = 1;
+					$articol->was_sent_to_admin_email = 1;
+					$articol->save();
+					Mail::to('djpolmd@gmail.com', 'Admin')->queue(new ArticleCreated($articol));
+					$mesaga = ' Email trimis cu succes';
+					 	 
+				}
+				else {  
+						$articol->send_to_admin_email = 0;						
+						$mesaga= ' Ati abondonat optiunea trimitere email';
+						
+					}
+
+					$articol->save();
+		
+					
+			return view('message', compact('mesaga'));
 		}
 
 	public function show($id)

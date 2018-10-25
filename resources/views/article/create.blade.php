@@ -7,14 +7,14 @@
 
   @section('content')
 
-  	@if (Auth::check())
+	@if (Auth::check())
 		
 	<div class="container">
 			<h2>Add new Articles</h2><br/>
 				<form method="post" action="{{action('ArtController@store')}}" enctype="multipart/form-data">
 				@csrf
 
-  	
+	
 			<!--'Title Form Input -->
 
 		  <div class="row">
@@ -59,23 +59,16 @@
 				</div></div>
 			</div>
 
-			<!-- Send Form Input -->
+			<!-- Send admin Form Input -->
 
 			<div class="row">
 				<div class="col-md-4"></div>
-			       <input type="checkbox" id="send_to_admin_email" name="send_to_admin_email"
-			               value="true" checked />
-			        <label for="send_to_admin_email">Send to admin an email</label>
-			    </div>
+				   <input type="checkbox" id="send_to_admin_email" name="send_to_admin_email"
+						   value="yes" checked />
+					<label for="send_to_admin_email">Send to admin an email</label>
+				</div>
 
-				<!-- Was_send Form Input -->
-
-			<div class="row">
-				<div class="col-md-4"></div>
-			       <input type="checkbox" id="was_sent_to_admin_email" name="was_sent_to_admin_email"
-			               value="true" checked />
-			        <label for="was_sent_to_admin_email">was_sent_to_admin_email</label>
-			    </div>
+			
 
 				
 				<!-- Subbmit button on form -->
@@ -91,7 +84,7 @@
 
 				<!-- Validation field check -->
 		
-							@if ($errors->any())
+						@if ($errors->any())
 							<div class="alert alert-danger">
 								<ul>
 									@foreach ($errors->all() as $error)
@@ -100,7 +93,6 @@
 								</ul>
 							</div>
 						@endif
-
 			@else 
 				<H2> Please log-in </H2>
 			@endif
