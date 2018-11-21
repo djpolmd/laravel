@@ -10465,3 +10465,87 @@ Did you mean one of these?
 #58 /home/dobos/laravel/laravel/server.php(21): require_once('/home/dobos/lar...')
 #59 {main}
 "} 
+[2018-11-21 11:46:36] production.ERROR: Too many arguments, expected arguments "command". {"exception":"[object] (Symfony\\Component\\Console\\Exception\\RuntimeException(code: 0): Too many arguments, expected arguments \"command\". at /home/dobos/laravel/newone/vendor/symfony/console/Input/ArgvInput.php:183)
+[stacktrace]
+#0 /home/dobos/laravel/newone/vendor/symfony/console/Input/ArgvInput.php(86): Symfony\\Component\\Console\\Input\\ArgvInput->parseArgument(':refresh')
+#1 /home/dobos/laravel/newone/vendor/symfony/console/Input/Input.php(55): Symfony\\Component\\Console\\Input\\ArgvInput->parse()
+#2 /home/dobos/laravel/newone/vendor/symfony/console/Command/Command.php(214): Symfony\\Component\\Console\\Input\\Input->bind(Object(Symfony\\Component\\Console\\Input\\InputDefinition))
+#3 /home/dobos/laravel/newone/vendor/laravel/framework/src/Illuminate/Console/Command.php(166): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#4 /home/dobos/laravel/newone/vendor/symfony/console/Application.php(886): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 /home/dobos/laravel/newone/vendor/symfony/console/Application.php(262): Symfony\\Component\\Console\\Application->doRunCommand(Object(Illuminate\\Database\\Console\\Migrations\\MigrateCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#6 /home/dobos/laravel/newone/vendor/symfony/console/Application.php(145): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#7 /home/dobos/laravel/newone/vendor/laravel/framework/src/Illuminate/Console/Application.php(89): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#8 /home/dobos/laravel/newone/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(122): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#9 /home/dobos/laravel/newone/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#10 {main}
+"} 
+[2018-11-21 11:46:43] production.ERROR: SQLSTATE[HY000] [1045] Access denied for user 'forge'@'localhost' (using password: NO) (SQL: SHOW FULL TABLES WHERE table_type = 'BASE TABLE') {"exception":"[object] (Illuminate\\Database\\QueryException(code: 1045): SQLSTATE[HY000] [1045] Access denied for user 'forge'@'localhost' (using password: NO) (SQL: SHOW FULL TABLES WHERE table_type = 'BASE TABLE') at /home/dobos/laravel/newone/vendor/laravel/framework/src/Illuminate/Database/Connection.php:664, PDOException(code: 1045): SQLSTATE[HY000] [1045] Access denied for user 'forge'@'localhost' (using password: NO) at /home/dobos/laravel/newone/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php:68)
+[stacktrace]
+#0 /home/dobos/laravel/newone/vendor/laravel/framework/src/Illuminate/Database/Connection.php(624): Illuminate\\Database\\Connection->runQueryCallback('SHOW FULL TABLE...', Array, Object(Closure))
+#1 /home/dobos/laravel/newone/vendor/laravel/framework/src/Illuminate/Database/Connection.php(333): Illuminate\\Database\\Connection->run('SHOW FULL TABLE...', Array, Object(Closure))
+#2 /home/dobos/laravel/newone/vendor/laravel/framework/src/Illuminate/Database/Schema/MySqlBuilder.php(99): Illuminate\\Database\\Connection->select('SHOW FULL TABLE...')
+#3 /home/dobos/laravel/newone/vendor/laravel/framework/src/Illuminate/Database/Schema/MySqlBuilder.php(48): Illuminate\\Database\\Schema\\MySqlBuilder->getAllTables()
+#4 /home/dobos/laravel/newone/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/FreshCommand.php(72): Illuminate\\Database\\Schema\\MySqlBuilder->dropAllTables()
+#5 /home/dobos/laravel/newone/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/FreshCommand.php(46): Illuminate\\Database\\Console\\Migrations\\FreshCommand->dropAllTables(NULL)
+#6 [internal function]: Illuminate\\Database\\Console\\Migrations\\FreshCommand->handle()
+#7 /home/dobos/laravel/newone/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(29): call_user_func_array(Array, Array)
+#8 /home/dobos/laravel/newone/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(87): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#9 /home/dobos/laravel/newone/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(31): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#10 /home/dobos/laravel/newone/vendor/laravel/framework/src/Illuminate/Container/Container.php(564): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#11 /home/dobos/laravel/newone/vendor/laravel/framework/src/Illuminate/Console/Command.php(179): Illuminate\\Container\\Container->call(Array)
+#12 /home/dobos/laravel/newone/vendor/symfony/console/Command/Command.php(255): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#13 /home/dobos/laravel/newone/vendor/laravel/framework/src/Illuminate/Console/Command.php(166): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#14 /home/dobos/laravel/newone/vendor/symfony/console/Application.php(886): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#15 /home/dobos/laravel/newone/vendor/symfony/console/Application.php(262): Symfony\\Component\\Console\\Application->doRunCommand(Object(Illuminate\\Database\\Console\\Migrations\\FreshCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#16 /home/dobos/laravel/newone/vendor/symfony/console/Application.php(145): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#17 /home/dobos/laravel/newone/vendor/laravel/framework/src/Illuminate/Console/Application.php(89): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#18 /home/dobos/laravel/newone/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(122): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#19 /home/dobos/laravel/newone/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#20 {main}
+"} 
+[2018-11-21 11:46:43] production.ERROR: include(/home/dobos/laravel/newone/vendor/composer/../jakub-onderka/php-console-color/src/ConsoleColor.php): failed to open stream: No such file or directory {"exception":"[object] (ErrorException(code: 0): include(/home/dobos/laravel/newone/vendor/composer/../jakub-onderka/php-console-color/src/ConsoleColor.php): failed to open stream: No such file or directory at /home/dobos/laravel/newone/vendor/composer/ClassLoader.php:444)
+[stacktrace]
+#0 /home/dobos/laravel/newone/vendor/composer/ClassLoader.php(444): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(2, 'include(/home/d...', '/home/dobos/lar...', 444, Array)
+#1 /home/dobos/laravel/newone/vendor/composer/ClassLoader.php(444): include()
+#2 /home/dobos/laravel/newone/vendor/composer/ClassLoader.php(322): Composer\\Autoload\\includeFile('/home/dobos/lar...')
+#3 [internal function]: Composer\\Autoload\\ClassLoader->loadClass('JakubOnderka\\\\Ph...')
+#4 /home/dobos/laravel/newone/vendor/nunomaduro/collision/src/Highlighter.php(47): spl_autoload_call('JakubOnderka\\\\Ph...')
+#5 /home/dobos/laravel/newone/vendor/nunomaduro/collision/src/Writer.php(91): NunoMaduro\\Collision\\Highlighter->__construct()
+#6 /home/dobos/laravel/newone/vendor/nunomaduro/collision/src/Handler.php(40): NunoMaduro\\Collision\\Writer->__construct()
+#7 /home/dobos/laravel/newone/vendor/nunomaduro/collision/src/Provider.php(49): NunoMaduro\\Collision\\Handler->__construct()
+#8 [internal function]: NunoMaduro\\Collision\\Provider->__construct(NULL, NULL)
+#9 /home/dobos/laravel/newone/vendor/laravel/framework/src/Illuminate/Container/Container.php(800): ReflectionClass->newInstanceArgs(Array)
+#10 /home/dobos/laravel/newone/vendor/laravel/framework/src/Illuminate/Container/Container.php(646): Illuminate\\Container\\Container->build('NunoMaduro\\\\Coll...')
+#11 /home/dobos/laravel/newone/vendor/laravel/framework/src/Illuminate/Container/Container.php(601): Illuminate\\Container\\Container->resolve('NunoMaduro\\\\Coll...', Array)
+#12 /home/dobos/laravel/newone/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(734): Illuminate\\Container\\Container->make('NunoMaduro\\\\Coll...', Array)
+#13 /home/dobos/laravel/newone/vendor/laravel/framework/src/Illuminate/Container/Container.php(256): Illuminate\\Foundation\\Application->make('NunoMaduro\\\\Coll...', Array)
+#14 /home/dobos/laravel/newone/vendor/laravel/framework/src/Illuminate/Container/Container.php(764): Illuminate\\Container\\Container->Illuminate\\Container\\{closure}(Object(Illuminate\\Foundation\\Application), Array)
+#15 /home/dobos/laravel/newone/vendor/laravel/framework/src/Illuminate/Container/Container.php(646): Illuminate\\Container\\Container->build(Object(Closure))
+#16 /home/dobos/laravel/newone/vendor/laravel/framework/src/Illuminate/Container/Container.php(601): Illuminate\\Container\\Container->resolve('NunoMaduro\\\\Coll...', Array)
+#17 /home/dobos/laravel/newone/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(734): Illuminate\\Container\\Container->make('NunoMaduro\\\\Coll...', Array)
+#18 /home/dobos/laravel/newone/vendor/nunomaduro/collision/src/Adapters/Laravel/ExceptionHandler.php(79): Illuminate\\Foundation\\Application->make('NunoMaduro\\\\Coll...')
+#19 /home/dobos/laravel/newone/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(365): NunoMaduro\\Collision\\Adapters\\Laravel\\ExceptionHandler->renderForConsole(Object(Symfony\\Component\\Console\\Output\\ConsoleOutput), Object(Illuminate\\Database\\QueryException))
+#20 /home/dobos/laravel/newone/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(126): Illuminate\\Foundation\\Console\\Kernel->renderException(Object(Symfony\\Component\\Console\\Output\\ConsoleOutput), Object(Illuminate\\Database\\QueryException))
+#21 /home/dobos/laravel/newone/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#22 {main}
+"} 
+[2018-11-21 11:46:43] production.ERROR: Uncaught ErrorException: include(/home/dobos/laravel/newone/vendor/composer/../jakub-onderka/php-console-color/src/ConsoleColor.php): failed to open stream: No such file or directory in /home/dobos/laravel/newone/vendor/composer/ClassLoader.php:444
+Stack trace:
+#0 /home/dobos/laravel/newone/vendor/composer/ClassLoader.php(444): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'include(/home/d...', '/home/dobos/lar...', 444, Array)
+#1 /home/dobos/laravel/newone/vendor/composer/ClassLoader.php(444): include()
+#2 /home/dobos/laravel/newone/vendor/composer/ClassLoader.php(322): Composer\Autoload\includeFile('/home/dobos/lar...')
+#3 [internal function]: Composer\Autoload\ClassLoader->loadClass('JakubOnderka\\Ph...')
+#4 /home/dobos/laravel/newone/vendor/nunomaduro/collision/src/Highlighter.php(47): spl_autoload_call('JakubOnderka\\Ph...')
+#5 /home/dobos/laravel/newone/vendor/nunomaduro/collision/src/Writer.php(91): NunoMaduro\Collision\Highlighter->__construct()
+#6 /home/dobos/laravel/newone/vendor/ {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 1): Uncaught ErrorException: include(/home/dobos/laravel/newone/vendor/composer/../jakub-onderka/php-console-color/src/ConsoleColor.php): failed to open stream: No such file or directory in /home/dobos/laravel/newone/vendor/composer/ClassLoader.php:444
+Stack trace:
+#0 /home/dobos/laravel/newone/vendor/composer/ClassLoader.php(444): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(2, 'include(/home/d...', '/home/dobos/lar...', 444, Array)
+#1 /home/dobos/laravel/newone/vendor/composer/ClassLoader.php(444): include()
+#2 /home/dobos/laravel/newone/vendor/composer/ClassLoader.php(322): Composer\\Autoload\\includeFile('/home/dobos/lar...')
+#3 [internal function]: Composer\\Autoload\\ClassLoader->loadClass('JakubOnderka\\\\Ph...')
+#4 /home/dobos/laravel/newone/vendor/nunomaduro/collision/src/Highlighter.php(47): spl_autoload_call('JakubOnderka\\\\Ph...')
+#5 /home/dobos/laravel/newone/vendor/nunomaduro/collision/src/Writer.php(91): NunoMaduro\\Collision\\Highlighter->__construct()
+#6 /home/dobos/laravel/newone/vendor/ at /home/dobos/laravel/newone/vendor/composer/ClassLoader.php:444)
+[stacktrace]
+#0 {main}
+"} 
