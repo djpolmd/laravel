@@ -10465,3 +10465,381 @@ Did you mean one of these?
 #58 /home/dobos/laravel/laravel/server.php(21): require_once('/home/dobos/lar...')
 #59 {main}
 "} 
+[2019-03-01 11:53:46] local.ERROR: SQLSTATE[HY000] [1049] Unknown database 'c9' (SQL: select * from information_schema.tables where table_schema = c9 and table_name = migrations) {"exception":"[object] (Illuminate\\Database\\QueryException(code: 1049): SQLSTATE[HY000] [1049] Unknown database 'c9' (SQL: select * from information_schema.tables where table_schema = c9 and table_name = migrations) at /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connection.php:664, PDOException(code: 1049): SQLSTATE[HY000] [1049] Unknown database 'c9' at /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php:68)
+[stacktrace]
+#0 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connection.php(624): Illuminate\\Database\\Connection->runQueryCallback('select * from i...', Array, Object(Closure))
+#1 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connection.php(333): Illuminate\\Database\\Connection->run('select * from i...', Array, Object(Closure))
+#2 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Schema/MySqlBuilder.php(18): Illuminate\\Database\\Connection->select('select * from i...', Array)
+#3 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Migrations/DatabaseMigrationRepository.php(169): Illuminate\\Database\\Schema\\MySqlBuilder->hasTable('migrations')
+#4 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(555): Illuminate\\Database\\Migrations\\DatabaseMigrationRepository->repositoryExists()
+#5 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(97): Illuminate\\Database\\Migrations\\Migrator->repositoryExists()
+#6 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(63): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->prepareDatabase()
+#7 [internal function]: Illuminate\\Database\\Console\\Migrations\\MigrateCommand->handle()
+#8 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(29): call_user_func_array(Array, Array)
+#9 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(87): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#10 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(31): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#11 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(564): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#12 /var/www/html/vendor/laravel/framework/src/Illuminate/Console/Command.php(179): Illuminate\\Container\\Container->call(Array)
+#13 /var/www/html/vendor/symfony/console/Command/Command.php(255): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#14 /var/www/html/vendor/laravel/framework/src/Illuminate/Console/Command.php(166): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#15 /var/www/html/vendor/symfony/console/Application.php(901): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#16 /var/www/html/vendor/symfony/console/Application.php(262): Symfony\\Component\\Console\\Application->doRunCommand(Object(Illuminate\\Database\\Console\\Migrations\\MigrateCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#17 /var/www/html/vendor/symfony/console/Application.php(145): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#18 /var/www/html/vendor/laravel/framework/src/Illuminate/Console/Application.php(89): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#19 /var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(122): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#20 /var/www/html/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#21 {main}
+"} 
+[2019-03-01 11:53:46] local.ERROR: Class 'JakubOnderka\PhpConsoleColor\ConsoleColor' not found {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): Class 'JakubOnderka\\PhpConsoleColor\\ConsoleColor' not found at /var/www/html/vendor/nunomaduro/collision/src/Highlighter.php:47)
+[stacktrace]
+#0 /var/www/html/vendor/nunomaduro/collision/src/Writer.php(91): NunoMaduro\\Collision\\Highlighter->__construct()
+#1 /var/www/html/vendor/nunomaduro/collision/src/Handler.php(40): NunoMaduro\\Collision\\Writer->__construct()
+#2 /var/www/html/vendor/nunomaduro/collision/src/Provider.php(49): NunoMaduro\\Collision\\Handler->__construct()
+#3 [internal function]: NunoMaduro\\Collision\\Provider->__construct(NULL, NULL)
+#4 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(800): ReflectionClass->newInstanceArgs(Array)
+#5 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(646): Illuminate\\Container\\Container->build('NunoMaduro\\\\Coll...')
+#6 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(601): Illuminate\\Container\\Container->resolve('NunoMaduro\\\\Coll...', Array)
+#7 /var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(734): Illuminate\\Container\\Container->make('NunoMaduro\\\\Coll...', Array)
+#8 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(256): Illuminate\\Foundation\\Application->make('NunoMaduro\\\\Coll...', Array)
+#9 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(764): Illuminate\\Container\\Container->Illuminate\\Container\\{closure}(Object(Illuminate\\Foundation\\Application), Array)
+#10 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(646): Illuminate\\Container\\Container->build(Object(Closure))
+#11 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(601): Illuminate\\Container\\Container->resolve('NunoMaduro\\\\Coll...', Array)
+#12 /var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(734): Illuminate\\Container\\Container->make('NunoMaduro\\\\Coll...', Array)
+#13 /var/www/html/vendor/nunomaduro/collision/src/Adapters/Laravel/ExceptionHandler.php(79): Illuminate\\Foundation\\Application->make('NunoMaduro\\\\Coll...')
+#14 /var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(365): NunoMaduro\\Collision\\Adapters\\Laravel\\ExceptionHandler->renderForConsole(Object(Symfony\\Component\\Console\\Output\\ConsoleOutput), Object(Illuminate\\Database\\QueryException))
+#15 /var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(126): Illuminate\\Foundation\\Console\\Kernel->renderException(Object(Symfony\\Component\\Console\\Output\\ConsoleOutput), Object(Illuminate\\Database\\QueryException))
+#16 /var/www/html/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#17 {main}
+"} 
+[2019-03-01 11:53:46] local.ERROR: Uncaught Error: Class 'JakubOnderka\PhpConsoleColor\ConsoleColor' not found in /var/www/html/vendor/nunomaduro/collision/src/Highlighter.php:47
+Stack trace:
+#0 /var/www/html/vendor/nunomaduro/collision/src/Writer.php(91): NunoMaduro\Collision\Highlighter->__construct()
+#1 /var/www/html/vendor/nunomaduro/collision/src/Handler.php(40): NunoMaduro\Collision\Writer->__construct()
+#2 /var/www/html/vendor/nunomaduro/collision/src/Provider.php(49): NunoMaduro\Collision\Handler->__construct()
+#3 [internal function]: NunoMaduro\Collision\Provider->__construct(NULL, NULL)
+#4 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(800): ReflectionClass->newInstanceArgs(Array)
+#5 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(646): Illuminate\Container\Container->build('NunoMaduro\\Coll...')
+#6 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(601): Illuminate\Container\Container->resolve('NunoMaduro\\Coll...', Array)
+#7 /var/www/html/vendor {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 1): Uncaught Error: Class 'JakubOnderka\\PhpConsoleColor\\ConsoleColor' not found in /var/www/html/vendor/nunomaduro/collision/src/Highlighter.php:47
+Stack trace:
+#0 /var/www/html/vendor/nunomaduro/collision/src/Writer.php(91): NunoMaduro\\Collision\\Highlighter->__construct()
+#1 /var/www/html/vendor/nunomaduro/collision/src/Handler.php(40): NunoMaduro\\Collision\\Writer->__construct()
+#2 /var/www/html/vendor/nunomaduro/collision/src/Provider.php(49): NunoMaduro\\Collision\\Handler->__construct()
+#3 [internal function]: NunoMaduro\\Collision\\Provider->__construct(NULL, NULL)
+#4 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(800): ReflectionClass->newInstanceArgs(Array)
+#5 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(646): Illuminate\\Container\\Container->build('NunoMaduro\\\\Coll...')
+#6 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(601): Illuminate\\Container\\Container->resolve('NunoMaduro\\\\Coll...', Array)
+#7 /var/www/html/vendor at /var/www/html/vendor/nunomaduro/collision/src/Highlighter.php:47)
+[stacktrace]
+#0 {main}
+"} 
+[2019-03-01 11:54:22] local.ERROR: SQLSTATE[HY000] [1049] Unknown database 'c9' (SQL: select * from information_schema.tables where table_schema = c9 and table_name = migrations) {"exception":"[object] (Illuminate\\Database\\QueryException(code: 1049): SQLSTATE[HY000] [1049] Unknown database 'c9' (SQL: select * from information_schema.tables where table_schema = c9 and table_name = migrations) at /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connection.php:664, PDOException(code: 1049): SQLSTATE[HY000] [1049] Unknown database 'c9' at /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php:68)
+[stacktrace]
+#0 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connection.php(624): Illuminate\\Database\\Connection->runQueryCallback('select * from i...', Array, Object(Closure))
+#1 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connection.php(333): Illuminate\\Database\\Connection->run('select * from i...', Array, Object(Closure))
+#2 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Schema/MySqlBuilder.php(18): Illuminate\\Database\\Connection->select('select * from i...', Array)
+#3 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Migrations/DatabaseMigrationRepository.php(169): Illuminate\\Database\\Schema\\MySqlBuilder->hasTable('migrations')
+#4 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(555): Illuminate\\Database\\Migrations\\DatabaseMigrationRepository->repositoryExists()
+#5 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(97): Illuminate\\Database\\Migrations\\Migrator->repositoryExists()
+#6 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(63): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->prepareDatabase()
+#7 [internal function]: Illuminate\\Database\\Console\\Migrations\\MigrateCommand->handle()
+#8 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(29): call_user_func_array(Array, Array)
+#9 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(87): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#10 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(31): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#11 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(564): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#12 /var/www/html/vendor/laravel/framework/src/Illuminate/Console/Command.php(179): Illuminate\\Container\\Container->call(Array)
+#13 /var/www/html/vendor/symfony/console/Command/Command.php(255): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#14 /var/www/html/vendor/laravel/framework/src/Illuminate/Console/Command.php(166): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#15 /var/www/html/vendor/symfony/console/Application.php(901): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#16 /var/www/html/vendor/symfony/console/Application.php(262): Symfony\\Component\\Console\\Application->doRunCommand(Object(Illuminate\\Database\\Console\\Migrations\\MigrateCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#17 /var/www/html/vendor/symfony/console/Application.php(145): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#18 /var/www/html/vendor/laravel/framework/src/Illuminate/Console/Application.php(89): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#19 /var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(122): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#20 /var/www/html/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#21 {main}
+"} 
+[2019-03-01 11:54:22] local.ERROR: Class 'JakubOnderka\PhpConsoleColor\ConsoleColor' not found {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): Class 'JakubOnderka\\PhpConsoleColor\\ConsoleColor' not found at /var/www/html/vendor/nunomaduro/collision/src/Highlighter.php:47)
+[stacktrace]
+#0 /var/www/html/vendor/nunomaduro/collision/src/Writer.php(91): NunoMaduro\\Collision\\Highlighter->__construct()
+#1 /var/www/html/vendor/nunomaduro/collision/src/Handler.php(40): NunoMaduro\\Collision\\Writer->__construct()
+#2 /var/www/html/vendor/nunomaduro/collision/src/Provider.php(49): NunoMaduro\\Collision\\Handler->__construct()
+#3 [internal function]: NunoMaduro\\Collision\\Provider->__construct(NULL, NULL)
+#4 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(800): ReflectionClass->newInstanceArgs(Array)
+#5 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(646): Illuminate\\Container\\Container->build('NunoMaduro\\\\Coll...')
+#6 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(601): Illuminate\\Container\\Container->resolve('NunoMaduro\\\\Coll...', Array)
+#7 /var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(734): Illuminate\\Container\\Container->make('NunoMaduro\\\\Coll...', Array)
+#8 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(256): Illuminate\\Foundation\\Application->make('NunoMaduro\\\\Coll...', Array)
+#9 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(764): Illuminate\\Container\\Container->Illuminate\\Container\\{closure}(Object(Illuminate\\Foundation\\Application), Array)
+#10 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(646): Illuminate\\Container\\Container->build(Object(Closure))
+#11 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(601): Illuminate\\Container\\Container->resolve('NunoMaduro\\\\Coll...', Array)
+#12 /var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(734): Illuminate\\Container\\Container->make('NunoMaduro\\\\Coll...', Array)
+#13 /var/www/html/vendor/nunomaduro/collision/src/Adapters/Laravel/ExceptionHandler.php(79): Illuminate\\Foundation\\Application->make('NunoMaduro\\\\Coll...')
+#14 /var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(365): NunoMaduro\\Collision\\Adapters\\Laravel\\ExceptionHandler->renderForConsole(Object(Symfony\\Component\\Console\\Output\\ConsoleOutput), Object(Illuminate\\Database\\QueryException))
+#15 /var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(126): Illuminate\\Foundation\\Console\\Kernel->renderException(Object(Symfony\\Component\\Console\\Output\\ConsoleOutput), Object(Illuminate\\Database\\QueryException))
+#16 /var/www/html/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#17 {main}
+"} 
+[2019-03-01 11:54:22] local.ERROR: Uncaught Error: Class 'JakubOnderka\PhpConsoleColor\ConsoleColor' not found in /var/www/html/vendor/nunomaduro/collision/src/Highlighter.php:47
+Stack trace:
+#0 /var/www/html/vendor/nunomaduro/collision/src/Writer.php(91): NunoMaduro\Collision\Highlighter->__construct()
+#1 /var/www/html/vendor/nunomaduro/collision/src/Handler.php(40): NunoMaduro\Collision\Writer->__construct()
+#2 /var/www/html/vendor/nunomaduro/collision/src/Provider.php(49): NunoMaduro\Collision\Handler->__construct()
+#3 [internal function]: NunoMaduro\Collision\Provider->__construct(NULL, NULL)
+#4 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(800): ReflectionClass->newInstanceArgs(Array)
+#5 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(646): Illuminate\Container\Container->build('NunoMaduro\\Coll...')
+#6 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(601): Illuminate\Container\Container->resolve('NunoMaduro\\Coll...', Array)
+#7 /var/www/html/vendor {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 1): Uncaught Error: Class 'JakubOnderka\\PhpConsoleColor\\ConsoleColor' not found in /var/www/html/vendor/nunomaduro/collision/src/Highlighter.php:47
+Stack trace:
+#0 /var/www/html/vendor/nunomaduro/collision/src/Writer.php(91): NunoMaduro\\Collision\\Highlighter->__construct()
+#1 /var/www/html/vendor/nunomaduro/collision/src/Handler.php(40): NunoMaduro\\Collision\\Writer->__construct()
+#2 /var/www/html/vendor/nunomaduro/collision/src/Provider.php(49): NunoMaduro\\Collision\\Handler->__construct()
+#3 [internal function]: NunoMaduro\\Collision\\Provider->__construct(NULL, NULL)
+#4 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(800): ReflectionClass->newInstanceArgs(Array)
+#5 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(646): Illuminate\\Container\\Container->build('NunoMaduro\\\\Coll...')
+#6 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(601): Illuminate\\Container\\Container->resolve('NunoMaduro\\\\Coll...', Array)
+#7 /var/www/html/vendor at /var/www/html/vendor/nunomaduro/collision/src/Highlighter.php:47)
+[stacktrace]
+#0 {main}
+"} 
+[2019-03-01 12:04:00] local.ERROR: SQLSTATE[HY000] [1049] Unknown database 'c9' (SQL: select * from information_schema.tables where table_schema = c9 and table_name = migrations) {"exception":"[object] (Illuminate\\Database\\QueryException(code: 1049): SQLSTATE[HY000] [1049] Unknown database 'c9' (SQL: select * from information_schema.tables where table_schema = c9 and table_name = migrations) at /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connection.php:664, PDOException(code: 1049): SQLSTATE[HY000] [1049] Unknown database 'c9' at /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php:68)
+[stacktrace]
+#0 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connection.php(624): Illuminate\\Database\\Connection->runQueryCallback('select * from i...', Array, Object(Closure))
+#1 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connection.php(333): Illuminate\\Database\\Connection->run('select * from i...', Array, Object(Closure))
+#2 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Schema/MySqlBuilder.php(18): Illuminate\\Database\\Connection->select('select * from i...', Array)
+#3 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Migrations/DatabaseMigrationRepository.php(169): Illuminate\\Database\\Schema\\MySqlBuilder->hasTable('migrations')
+#4 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(555): Illuminate\\Database\\Migrations\\DatabaseMigrationRepository->repositoryExists()
+#5 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(97): Illuminate\\Database\\Migrations\\Migrator->repositoryExists()
+#6 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(63): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->prepareDatabase()
+#7 [internal function]: Illuminate\\Database\\Console\\Migrations\\MigrateCommand->handle()
+#8 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(29): call_user_func_array(Array, Array)
+#9 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(87): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#10 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(31): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#11 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(564): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#12 /var/www/html/vendor/laravel/framework/src/Illuminate/Console/Command.php(179): Illuminate\\Container\\Container->call(Array)
+#13 /var/www/html/vendor/symfony/console/Command/Command.php(255): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#14 /var/www/html/vendor/laravel/framework/src/Illuminate/Console/Command.php(166): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#15 /var/www/html/vendor/symfony/console/Application.php(901): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#16 /var/www/html/vendor/symfony/console/Application.php(262): Symfony\\Component\\Console\\Application->doRunCommand(Object(Illuminate\\Database\\Console\\Migrations\\MigrateCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#17 /var/www/html/vendor/symfony/console/Application.php(145): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#18 /var/www/html/vendor/laravel/framework/src/Illuminate/Console/Application.php(89): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#19 /var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(122): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#20 /var/www/html/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#21 {main}
+"} 
+[2019-03-01 12:04:00] local.ERROR: Class 'JakubOnderka\PhpConsoleColor\ConsoleColor' not found {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): Class 'JakubOnderka\\PhpConsoleColor\\ConsoleColor' not found at /var/www/html/vendor/nunomaduro/collision/src/Highlighter.php:47)
+[stacktrace]
+#0 /var/www/html/vendor/nunomaduro/collision/src/Writer.php(91): NunoMaduro\\Collision\\Highlighter->__construct()
+#1 /var/www/html/vendor/nunomaduro/collision/src/Handler.php(40): NunoMaduro\\Collision\\Writer->__construct()
+#2 /var/www/html/vendor/nunomaduro/collision/src/Provider.php(49): NunoMaduro\\Collision\\Handler->__construct()
+#3 [internal function]: NunoMaduro\\Collision\\Provider->__construct(NULL, NULL)
+#4 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(800): ReflectionClass->newInstanceArgs(Array)
+#5 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(646): Illuminate\\Container\\Container->build('NunoMaduro\\\\Coll...')
+#6 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(601): Illuminate\\Container\\Container->resolve('NunoMaduro\\\\Coll...', Array)
+#7 /var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(734): Illuminate\\Container\\Container->make('NunoMaduro\\\\Coll...', Array)
+#8 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(256): Illuminate\\Foundation\\Application->make('NunoMaduro\\\\Coll...', Array)
+#9 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(764): Illuminate\\Container\\Container->Illuminate\\Container\\{closure}(Object(Illuminate\\Foundation\\Application), Array)
+#10 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(646): Illuminate\\Container\\Container->build(Object(Closure))
+#11 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(601): Illuminate\\Container\\Container->resolve('NunoMaduro\\\\Coll...', Array)
+#12 /var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(734): Illuminate\\Container\\Container->make('NunoMaduro\\\\Coll...', Array)
+#13 /var/www/html/vendor/nunomaduro/collision/src/Adapters/Laravel/ExceptionHandler.php(79): Illuminate\\Foundation\\Application->make('NunoMaduro\\\\Coll...')
+#14 /var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(365): NunoMaduro\\Collision\\Adapters\\Laravel\\ExceptionHandler->renderForConsole(Object(Symfony\\Component\\Console\\Output\\ConsoleOutput), Object(Illuminate\\Database\\QueryException))
+#15 /var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(126): Illuminate\\Foundation\\Console\\Kernel->renderException(Object(Symfony\\Component\\Console\\Output\\ConsoleOutput), Object(Illuminate\\Database\\QueryException))
+#16 /var/www/html/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#17 {main}
+"} 
+[2019-03-01 12:04:00] local.ERROR: Uncaught Error: Class 'JakubOnderka\PhpConsoleColor\ConsoleColor' not found in /var/www/html/vendor/nunomaduro/collision/src/Highlighter.php:47
+Stack trace:
+#0 /var/www/html/vendor/nunomaduro/collision/src/Writer.php(91): NunoMaduro\Collision\Highlighter->__construct()
+#1 /var/www/html/vendor/nunomaduro/collision/src/Handler.php(40): NunoMaduro\Collision\Writer->__construct()
+#2 /var/www/html/vendor/nunomaduro/collision/src/Provider.php(49): NunoMaduro\Collision\Handler->__construct()
+#3 [internal function]: NunoMaduro\Collision\Provider->__construct(NULL, NULL)
+#4 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(800): ReflectionClass->newInstanceArgs(Array)
+#5 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(646): Illuminate\Container\Container->build('NunoMaduro\\Coll...')
+#6 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(601): Illuminate\Container\Container->resolve('NunoMaduro\\Coll...', Array)
+#7 /var/www/html/vendor {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 1): Uncaught Error: Class 'JakubOnderka\\PhpConsoleColor\\ConsoleColor' not found in /var/www/html/vendor/nunomaduro/collision/src/Highlighter.php:47
+Stack trace:
+#0 /var/www/html/vendor/nunomaduro/collision/src/Writer.php(91): NunoMaduro\\Collision\\Highlighter->__construct()
+#1 /var/www/html/vendor/nunomaduro/collision/src/Handler.php(40): NunoMaduro\\Collision\\Writer->__construct()
+#2 /var/www/html/vendor/nunomaduro/collision/src/Provider.php(49): NunoMaduro\\Collision\\Handler->__construct()
+#3 [internal function]: NunoMaduro\\Collision\\Provider->__construct(NULL, NULL)
+#4 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(800): ReflectionClass->newInstanceArgs(Array)
+#5 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(646): Illuminate\\Container\\Container->build('NunoMaduro\\\\Coll...')
+#6 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(601): Illuminate\\Container\\Container->resolve('NunoMaduro\\\\Coll...', Array)
+#7 /var/www/html/vendor at /var/www/html/vendor/nunomaduro/collision/src/Highlighter.php:47)
+[stacktrace]
+#0 {main}
+"} 
+[2019-03-01 12:06:12] local.ERROR: Command "route" is not defined.
+
+Did you mean one of these?
+    route:cache
+    route:clear
+    route:list {"exception":"[object] (Symfony\\Component\\Console\\Exception\\CommandNotFoundException(code: 0): Command \"route\" is not defined.
+
+Did you mean one of these?
+    route:cache
+    route:clear
+    route:list at /var/www/html/vendor/symfony/console/Application.php:632)
+[stacktrace]
+#0 /var/www/html/vendor/symfony/console/Application.php(226): Symfony\\Component\\Console\\Application->find('route')
+#1 /var/www/html/vendor/symfony/console/Application.php(145): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#2 /var/www/html/vendor/laravel/framework/src/Illuminate/Console/Application.php(89): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#3 /var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(122): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#4 /var/www/html/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
+[2019-03-01 12:06:20] local.ERROR: Command "rute" is not defined.
+
+Did you mean one of these?
+    route:cache
+    route:clear
+    route:list {"exception":"[object] (Symfony\\Component\\Console\\Exception\\CommandNotFoundException(code: 0): Command \"rute\" is not defined.
+
+Did you mean one of these?
+    route:cache
+    route:clear
+    route:list at /var/www/html/vendor/symfony/console/Application.php:632)
+[stacktrace]
+#0 /var/www/html/vendor/symfony/console/Application.php(226): Symfony\\Component\\Console\\Application->find('rute')
+#1 /var/www/html/vendor/symfony/console/Application.php(145): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#2 /var/www/html/vendor/laravel/framework/src/Illuminate/Console/Application.php(89): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#3 /var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(122): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#4 /var/www/html/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
+[2019-03-01 12:15:05] local.ERROR: SQLSTATE[HY000] [1049] Unknown database 'rentacot' (SQL: select * from information_schema.tables where table_schema = rentacot and table_name = migrations) {"exception":"[object] (Illuminate\\Database\\QueryException(code: 1049): SQLSTATE[HY000] [1049] Unknown database 'rentacot' (SQL: select * from information_schema.tables where table_schema = rentacot and table_name = migrations) at /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connection.php:664, PDOException(code: 1049): SQLSTATE[HY000] [1049] Unknown database 'rentacot' at /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php:68)
+[stacktrace]
+#0 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connection.php(624): Illuminate\\Database\\Connection->runQueryCallback('select * from i...', Array, Object(Closure))
+#1 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connection.php(333): Illuminate\\Database\\Connection->run('select * from i...', Array, Object(Closure))
+#2 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Schema/MySqlBuilder.php(18): Illuminate\\Database\\Connection->select('select * from i...', Array)
+#3 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Migrations/DatabaseMigrationRepository.php(169): Illuminate\\Database\\Schema\\MySqlBuilder->hasTable('migrations')
+#4 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(555): Illuminate\\Database\\Migrations\\DatabaseMigrationRepository->repositoryExists()
+#5 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(97): Illuminate\\Database\\Migrations\\Migrator->repositoryExists()
+#6 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(63): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->prepareDatabase()
+#7 [internal function]: Illuminate\\Database\\Console\\Migrations\\MigrateCommand->handle()
+#8 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(29): call_user_func_array(Array, Array)
+#9 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(87): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#10 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(31): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#11 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(564): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#12 /var/www/html/vendor/laravel/framework/src/Illuminate/Console/Command.php(179): Illuminate\\Container\\Container->call(Array)
+#13 /var/www/html/vendor/symfony/console/Command/Command.php(255): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#14 /var/www/html/vendor/laravel/framework/src/Illuminate/Console/Command.php(166): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#15 /var/www/html/vendor/symfony/console/Application.php(901): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#16 /var/www/html/vendor/symfony/console/Application.php(262): Symfony\\Component\\Console\\Application->doRunCommand(Object(Illuminate\\Database\\Console\\Migrations\\MigrateCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#17 /var/www/html/vendor/symfony/console/Application.php(145): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#18 /var/www/html/vendor/laravel/framework/src/Illuminate/Console/Application.php(89): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#19 /var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(122): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#20 /var/www/html/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#21 {main}
+"} 
+[2019-03-01 12:15:05] local.ERROR: Class 'JakubOnderka\PhpConsoleColor\ConsoleColor' not found {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): Class 'JakubOnderka\\PhpConsoleColor\\ConsoleColor' not found at /var/www/html/vendor/nunomaduro/collision/src/Highlighter.php:47)
+[stacktrace]
+#0 /var/www/html/vendor/nunomaduro/collision/src/Writer.php(91): NunoMaduro\\Collision\\Highlighter->__construct()
+#1 /var/www/html/vendor/nunomaduro/collision/src/Handler.php(40): NunoMaduro\\Collision\\Writer->__construct()
+#2 /var/www/html/vendor/nunomaduro/collision/src/Provider.php(49): NunoMaduro\\Collision\\Handler->__construct()
+#3 [internal function]: NunoMaduro\\Collision\\Provider->__construct(NULL, NULL)
+#4 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(800): ReflectionClass->newInstanceArgs(Array)
+#5 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(646): Illuminate\\Container\\Container->build('NunoMaduro\\\\Coll...')
+#6 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(601): Illuminate\\Container\\Container->resolve('NunoMaduro\\\\Coll...', Array)
+#7 /var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(734): Illuminate\\Container\\Container->make('NunoMaduro\\\\Coll...', Array)
+#8 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(256): Illuminate\\Foundation\\Application->make('NunoMaduro\\\\Coll...', Array)
+#9 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(764): Illuminate\\Container\\Container->Illuminate\\Container\\{closure}(Object(Illuminate\\Foundation\\Application), Array)
+#10 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(646): Illuminate\\Container\\Container->build(Object(Closure))
+#11 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(601): Illuminate\\Container\\Container->resolve('NunoMaduro\\\\Coll...', Array)
+#12 /var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(734): Illuminate\\Container\\Container->make('NunoMaduro\\\\Coll...', Array)
+#13 /var/www/html/vendor/nunomaduro/collision/src/Adapters/Laravel/ExceptionHandler.php(79): Illuminate\\Foundation\\Application->make('NunoMaduro\\\\Coll...')
+#14 /var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(365): NunoMaduro\\Collision\\Adapters\\Laravel\\ExceptionHandler->renderForConsole(Object(Symfony\\Component\\Console\\Output\\ConsoleOutput), Object(Illuminate\\Database\\QueryException))
+#15 /var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(126): Illuminate\\Foundation\\Console\\Kernel->renderException(Object(Symfony\\Component\\Console\\Output\\ConsoleOutput), Object(Illuminate\\Database\\QueryException))
+#16 /var/www/html/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#17 {main}
+"} 
+[2019-03-01 12:15:05] local.ERROR: Uncaught Error: Class 'JakubOnderka\PhpConsoleColor\ConsoleColor' not found in /var/www/html/vendor/nunomaduro/collision/src/Highlighter.php:47
+Stack trace:
+#0 /var/www/html/vendor/nunomaduro/collision/src/Writer.php(91): NunoMaduro\Collision\Highlighter->__construct()
+#1 /var/www/html/vendor/nunomaduro/collision/src/Handler.php(40): NunoMaduro\Collision\Writer->__construct()
+#2 /var/www/html/vendor/nunomaduro/collision/src/Provider.php(49): NunoMaduro\Collision\Handler->__construct()
+#3 [internal function]: NunoMaduro\Collision\Provider->__construct(NULL, NULL)
+#4 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(800): ReflectionClass->newInstanceArgs(Array)
+#5 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(646): Illuminate\Container\Container->build('NunoMaduro\\Coll...')
+#6 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(601): Illuminate\Container\Container->resolve('NunoMaduro\\Coll...', Array)
+#7 /var/www/html/vendor {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 1): Uncaught Error: Class 'JakubOnderka\\PhpConsoleColor\\ConsoleColor' not found in /var/www/html/vendor/nunomaduro/collision/src/Highlighter.php:47
+Stack trace:
+#0 /var/www/html/vendor/nunomaduro/collision/src/Writer.php(91): NunoMaduro\\Collision\\Highlighter->__construct()
+#1 /var/www/html/vendor/nunomaduro/collision/src/Handler.php(40): NunoMaduro\\Collision\\Writer->__construct()
+#2 /var/www/html/vendor/nunomaduro/collision/src/Provider.php(49): NunoMaduro\\Collision\\Handler->__construct()
+#3 [internal function]: NunoMaduro\\Collision\\Provider->__construct(NULL, NULL)
+#4 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(800): ReflectionClass->newInstanceArgs(Array)
+#5 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(646): Illuminate\\Container\\Container->build('NunoMaduro\\\\Coll...')
+#6 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(601): Illuminate\\Container\\Container->resolve('NunoMaduro\\\\Coll...', Array)
+#7 /var/www/html/vendor at /var/www/html/vendor/nunomaduro/collision/src/Highlighter.php:47)
+[stacktrace]
+#0 {main}
+"} 
+[2019-03-01 12:16:41] local.ERROR: SQLSTATE[HY000] [1049] Unknown database 'rentacot' (SQL: select * from information_schema.tables where table_schema = rentacot and table_name = migrations) {"exception":"[object] (Illuminate\\Database\\QueryException(code: 1049): SQLSTATE[HY000] [1049] Unknown database 'rentacot' (SQL: select * from information_schema.tables where table_schema = rentacot and table_name = migrations) at /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connection.php:664, PDOException(code: 1049): SQLSTATE[HY000] [1049] Unknown database 'rentacot' at /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php:68)
+[stacktrace]
+#0 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connection.php(624): Illuminate\\Database\\Connection->runQueryCallback('select * from i...', Array, Object(Closure))
+#1 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connection.php(333): Illuminate\\Database\\Connection->run('select * from i...', Array, Object(Closure))
+#2 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Schema/MySqlBuilder.php(18): Illuminate\\Database\\Connection->select('select * from i...', Array)
+#3 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Migrations/DatabaseMigrationRepository.php(169): Illuminate\\Database\\Schema\\MySqlBuilder->hasTable('migrations')
+#4 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(555): Illuminate\\Database\\Migrations\\DatabaseMigrationRepository->repositoryExists()
+#5 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(97): Illuminate\\Database\\Migrations\\Migrator->repositoryExists()
+#6 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(63): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->prepareDatabase()
+#7 [internal function]: Illuminate\\Database\\Console\\Migrations\\MigrateCommand->handle()
+#8 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(29): call_user_func_array(Array, Array)
+#9 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(87): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#10 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(31): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#11 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(564): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#12 /var/www/html/vendor/laravel/framework/src/Illuminate/Console/Command.php(179): Illuminate\\Container\\Container->call(Array)
+#13 /var/www/html/vendor/symfony/console/Command/Command.php(255): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#14 /var/www/html/vendor/laravel/framework/src/Illuminate/Console/Command.php(166): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#15 /var/www/html/vendor/symfony/console/Application.php(901): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#16 /var/www/html/vendor/symfony/console/Application.php(262): Symfony\\Component\\Console\\Application->doRunCommand(Object(Illuminate\\Database\\Console\\Migrations\\MigrateCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#17 /var/www/html/vendor/symfony/console/Application.php(145): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#18 /var/www/html/vendor/laravel/framework/src/Illuminate/Console/Application.php(89): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#19 /var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(122): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#20 /var/www/html/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#21 {main}
+"} 
+[2019-03-01 12:16:41] local.ERROR: Class 'JakubOnderka\PhpConsoleColor\ConsoleColor' not found {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): Class 'JakubOnderka\\PhpConsoleColor\\ConsoleColor' not found at /var/www/html/vendor/nunomaduro/collision/src/Highlighter.php:47)
+[stacktrace]
+#0 /var/www/html/vendor/nunomaduro/collision/src/Writer.php(91): NunoMaduro\\Collision\\Highlighter->__construct()
+#1 /var/www/html/vendor/nunomaduro/collision/src/Handler.php(40): NunoMaduro\\Collision\\Writer->__construct()
+#2 /var/www/html/vendor/nunomaduro/collision/src/Provider.php(49): NunoMaduro\\Collision\\Handler->__construct()
+#3 [internal function]: NunoMaduro\\Collision\\Provider->__construct(NULL, NULL)
+#4 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(800): ReflectionClass->newInstanceArgs(Array)
+#5 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(646): Illuminate\\Container\\Container->build('NunoMaduro\\\\Coll...')
+#6 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(601): Illuminate\\Container\\Container->resolve('NunoMaduro\\\\Coll...', Array)
+#7 /var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(734): Illuminate\\Container\\Container->make('NunoMaduro\\\\Coll...', Array)
+#8 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(256): Illuminate\\Foundation\\Application->make('NunoMaduro\\\\Coll...', Array)
+#9 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(764): Illuminate\\Container\\Container->Illuminate\\Container\\{closure}(Object(Illuminate\\Foundation\\Application), Array)
+#10 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(646): Illuminate\\Container\\Container->build(Object(Closure))
+#11 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(601): Illuminate\\Container\\Container->resolve('NunoMaduro\\\\Coll...', Array)
+#12 /var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(734): Illuminate\\Container\\Container->make('NunoMaduro\\\\Coll...', Array)
+#13 /var/www/html/vendor/nunomaduro/collision/src/Adapters/Laravel/ExceptionHandler.php(79): Illuminate\\Foundation\\Application->make('NunoMaduro\\\\Coll...')
+#14 /var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(365): NunoMaduro\\Collision\\Adapters\\Laravel\\ExceptionHandler->renderForConsole(Object(Symfony\\Component\\Console\\Output\\ConsoleOutput), Object(Illuminate\\Database\\QueryException))
+#15 /var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(126): Illuminate\\Foundation\\Console\\Kernel->renderException(Object(Symfony\\Component\\Console\\Output\\ConsoleOutput), Object(Illuminate\\Database\\QueryException))
+#16 /var/www/html/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#17 {main}
+"} 
+[2019-03-01 12:16:41] local.ERROR: Uncaught Error: Class 'JakubOnderka\PhpConsoleColor\ConsoleColor' not found in /var/www/html/vendor/nunomaduro/collision/src/Highlighter.php:47
+Stack trace:
+#0 /var/www/html/vendor/nunomaduro/collision/src/Writer.php(91): NunoMaduro\Collision\Highlighter->__construct()
+#1 /var/www/html/vendor/nunomaduro/collision/src/Handler.php(40): NunoMaduro\Collision\Writer->__construct()
+#2 /var/www/html/vendor/nunomaduro/collision/src/Provider.php(49): NunoMaduro\Collision\Handler->__construct()
+#3 [internal function]: NunoMaduro\Collision\Provider->__construct(NULL, NULL)
+#4 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(800): ReflectionClass->newInstanceArgs(Array)
+#5 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(646): Illuminate\Container\Container->build('NunoMaduro\\Coll...')
+#6 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(601): Illuminate\Container\Container->resolve('NunoMaduro\\Coll...', Array)
+#7 /var/www/html/vendor {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 1): Uncaught Error: Class 'JakubOnderka\\PhpConsoleColor\\ConsoleColor' not found in /var/www/html/vendor/nunomaduro/collision/src/Highlighter.php:47
+Stack trace:
+#0 /var/www/html/vendor/nunomaduro/collision/src/Writer.php(91): NunoMaduro\\Collision\\Highlighter->__construct()
+#1 /var/www/html/vendor/nunomaduro/collision/src/Handler.php(40): NunoMaduro\\Collision\\Writer->__construct()
+#2 /var/www/html/vendor/nunomaduro/collision/src/Provider.php(49): NunoMaduro\\Collision\\Handler->__construct()
+#3 [internal function]: NunoMaduro\\Collision\\Provider->__construct(NULL, NULL)
+#4 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(800): ReflectionClass->newInstanceArgs(Array)
+#5 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(646): Illuminate\\Container\\Container->build('NunoMaduro\\\\Coll...')
+#6 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(601): Illuminate\\Container\\Container->resolve('NunoMaduro\\\\Coll...', Array)
+#7 /var/www/html/vendor at /var/www/html/vendor/nunomaduro/collision/src/Highlighter.php:47)
+[stacktrace]
+#0 {main}
+"} 
