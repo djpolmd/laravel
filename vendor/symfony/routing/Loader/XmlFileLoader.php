@@ -168,6 +168,7 @@ class XmlFileLoader extends FileLoader
 
         $this->setCurrentDir(\dirname($path));
 
+        /** @var RouteCollection[] $imported */
         $imported = $this->import($resource, ('' !== $type ? $type : null), false, $file);
 
         if (!\is_array($imported)) {
@@ -268,6 +269,7 @@ class XmlFileLoader extends FileLoader
         $prefixes = [];
         $paths = [];
 
+        /** @var \DOMElement $n */
         foreach ($node->getElementsByTagNameNS(self::NAMESPACE_URI, '*') as $n) {
             if ($node !== $n->parentNode) {
                 continue;
@@ -292,7 +294,7 @@ class XmlFileLoader extends FileLoader
                     $requirements[$n->getAttribute('key')] = trim($n->textContent);
                     break;
                 case 'option':
-                    $options[$n->getAttribute('key')] = trim($n->textContent);
+                    $options[$n->getAttribute('key')] = XmlUtils::phpize(trim($n->textContent));
                     break;
                 case 'condition':
                     $condition = trim($n->textContent);
@@ -311,6 +313,15 @@ class XmlFileLoader extends FileLoader
 
             $defaults['_controller'] = $controller;
         }
+        if ($node->hasAttribute('locale')) {
+            $defaults['_locale'] = $node->getAttribute('locale');
+        }
+        if ($node->hasAttribute('format')) {
+            $defaults['_format'] = $node->getAttribute('format');
+        }
+        if ($node->hasAttribute('utf8')) {
+            $options['utf8'] = XmlUtils::phpize($node->getAttribute('utf8'));
+        }
 
         return [$defaults, $requirements, $options, $condition, $paths, $prefixes];
     }
@@ -326,7 +337,7 @@ class XmlFileLoader extends FileLoader
     private function parseDefaultsConfig(\DOMElement $element, $path)
     {
         if ($this->isElementValueNull($element)) {
-            return;
+            return null;
         }
 
         // Check for existing element nodes in the default element. There can
@@ -363,7 +374,7 @@ class XmlFileLoader extends FileLoader
     private function parseDefaultNode(\DOMElement $node, $path)
     {
         if ($this->isElementValueNull($node)) {
-            return;
+            return null;
         }
 
         switch ($node->localName) {
