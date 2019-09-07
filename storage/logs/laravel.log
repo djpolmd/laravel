@@ -10830,3 +10830,60 @@ Stack trace:
 [stacktrace]
 #0 {main}
 "} 
+[2019-09-07 10:53:18] local.ERROR: There are no commands defined in the "pakage" namespace.
+
+Did you mean this?
+    package {"exception":"[object] (Symfony\\Component\\Console\\Exception\\NamespaceNotFoundException(code: 0): There are no commands defined in the \"pakage\" namespace.
+
+Did you mean this?
+    package at /home/sammy/CRUD/vendor/symfony/console/Application.php:583)
+[stacktrace]
+#0 /home/sammy/CRUD/vendor/symfony/console/Application.php(632): Symfony\\Component\\Console\\Application->findNamespace('pakage')
+#1 /home/sammy/CRUD/vendor/symfony/console/Application.php(236): Symfony\\Component\\Console\\Application->find('pakage:discover')
+#2 /home/sammy/CRUD/vendor/symfony/console/Application.php(148): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#3 /home/sammy/CRUD/vendor/laravel/framework/src/Illuminate/Console/Application.php(89): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#4 /home/sammy/CRUD/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(122): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 /home/sammy/CRUD/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#6 {main}
+"} 
+[2019-09-07 10:53:41] local.ERROR: SQLSTATE[42000]: Syntax error or access violation: 1071 Specified key was too long; max key length is 767 bytes (SQL: alter table `password_resets` add index `password_resets_email_index`(`email`)) {"exception":"[object] (Illuminate\\Database\\QueryException(code: 42000): SQLSTATE[42000]: Syntax error or access violation: 1071 Specified key was too long; max key length is 767 bytes (SQL: alter table `password_resets` add index `password_resets_email_index`(`email`)) at /home/sammy/CRUD/vendor/laravel/framework/src/Illuminate/Database/Connection.php:664, PDOException(code: 42000): SQLSTATE[42000]: Syntax error or access violation: 1071 Specified key was too long; max key length is 767 bytes at /home/sammy/CRUD/vendor/laravel/framework/src/Illuminate/Database/Connection.php:458)
+[stacktrace]
+#0 /home/sammy/CRUD/vendor/laravel/framework/src/Illuminate/Database/Connection.php(624): Illuminate\\Database\\Connection->runQueryCallback('alter table `pa...', Array, Object(Closure))
+#1 /home/sammy/CRUD/vendor/laravel/framework/src/Illuminate/Database/Connection.php(459): Illuminate\\Database\\Connection->run('alter table `pa...', Array, Object(Closure))
+#2 /home/sammy/CRUD/vendor/laravel/framework/src/Illuminate/Database/Schema/Blueprint.php(88): Illuminate\\Database\\Connection->statement('alter table `pa...')
+#3 /home/sammy/CRUD/vendor/laravel/framework/src/Illuminate/Database/Schema/Builder.php(264): Illuminate\\Database\\Schema\\Blueprint->build(Object(Illuminate\\Database\\MySqlConnection), Object(Illuminate\\Database\\Schema\\Grammars\\MySqlGrammar))
+#4 /home/sammy/CRUD/vendor/laravel/framework/src/Illuminate/Database/Schema/Builder.php(165): Illuminate\\Database\\Schema\\Builder->build(Object(Illuminate\\Database\\Schema\\Blueprint))
+#5 /home/sammy/CRUD/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(223): Illuminate\\Database\\Schema\\Builder->create('password_resets', Object(Closure))
+#6 /home/sammy/CRUD/database/migrations/2018_05_26_085447_create_password_resets_table.php(20): Illuminate\\Support\\Facades\\Facade::__callStatic('create', Array)
+#7 /home/sammy/CRUD/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(359): CreatePasswordResetsTable->up()
+#8 /home/sammy/CRUD/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(366): Illuminate\\Database\\Migrations\\Migrator->Illuminate\\Database\\Migrations\\{closure}()
+#9 /home/sammy/CRUD/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(177): Illuminate\\Database\\Migrations\\Migrator->runMigration(Object(CreatePasswordResetsTable), 'up')
+#10 /home/sammy/CRUD/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(146): Illuminate\\Database\\Migrations\\Migrator->runUp('/home/sammy/CRU...', 1, false)
+#11 /home/sammy/CRUD/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(95): Illuminate\\Database\\Migrations\\Migrator->runPending(Array, Array)
+#12 /home/sammy/CRUD/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(70): Illuminate\\Database\\Migrations\\Migrator->run(Array, Array)
+#13 [internal function]: Illuminate\\Database\\Console\\Migrations\\MigrateCommand->handle()
+#14 /home/sammy/CRUD/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(29): call_user_func_array(Array, Array)
+#15 /home/sammy/CRUD/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(87): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#16 /home/sammy/CRUD/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(31): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#17 /home/sammy/CRUD/vendor/laravel/framework/src/Illuminate/Container/Container.php(564): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#18 /home/sammy/CRUD/vendor/laravel/framework/src/Illuminate/Console/Command.php(179): Illuminate\\Container\\Container->call(Array)
+#19 /home/sammy/CRUD/vendor/symfony/console/Command/Command.php(255): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArrayInput), Object(Illuminate\\Console\\OutputStyle))
+#20 /home/sammy/CRUD/vendor/laravel/framework/src/Illuminate/Console/Command.php(166): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArrayInput), Object(Illuminate\\Console\\OutputStyle))
+#21 /home/sammy/CRUD/vendor/laravel/framework/src/Illuminate/Console/Command.php(194): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArrayInput), Object(Illuminate\\Console\\OutputStyle))
+#22 /home/sammy/CRUD/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/FreshCommand.php(51): Illuminate\\Console\\Command->call('migrate', Array)
+#23 [internal function]: Illuminate\\Database\\Console\\Migrations\\FreshCommand->handle()
+#24 /home/sammy/CRUD/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(29): call_user_func_array(Array, Array)
+#25 /home/sammy/CRUD/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(87): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#26 /home/sammy/CRUD/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(31): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#27 /home/sammy/CRUD/vendor/laravel/framework/src/Illuminate/Container/Container.php(564): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#28 /home/sammy/CRUD/vendor/laravel/framework/src/Illuminate/Console/Command.php(179): Illuminate\\Container\\Container->call(Array)
+#29 /home/sammy/CRUD/vendor/symfony/console/Command/Command.php(255): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#30 /home/sammy/CRUD/vendor/laravel/framework/src/Illuminate/Console/Command.php(166): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#31 /home/sammy/CRUD/vendor/symfony/console/Application.php(915): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#32 /home/sammy/CRUD/vendor/symfony/console/Application.php(272): Symfony\\Component\\Console\\Application->doRunCommand(Object(Illuminate\\Database\\Console\\Migrations\\FreshCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#33 /home/sammy/CRUD/vendor/symfony/console/Application.php(148): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#34 /home/sammy/CRUD/vendor/laravel/framework/src/Illuminate/Console/Application.php(89): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#35 /home/sammy/CRUD/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(122): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#36 /home/sammy/CRUD/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#37 {main}
+"} 
