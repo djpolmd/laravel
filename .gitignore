@@ -1,4 +1,4 @@
-/node_modules
+
 /public
 /vendor
 /public/storage
@@ -7,9 +7,21 @@
 /.vscode
 /.vagrant
 
+### Laravel ###
 Homestead.json
 Homestead.yaml
 npm-debug.log
 yarn-error.log
 .env
 .phpunit.result.cache
+.npm
+
+#PHPstoem stuff
+.idea
+# npm laravel-mix
+npm-debug.log
+.idea
+.npm
+
+bootstrap/compiled.php
+app/storage/
