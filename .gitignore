@@ -22,6 +22,7 @@ yarn-error.log
 npm-debug.log
 .idea
 .npm
+/node_modules
 
 bootstrap/compiled.p
 app/storage/
