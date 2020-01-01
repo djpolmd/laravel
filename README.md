@@ -31,3 +31,18 @@ GET /articles/<articol_id><br>
 
 <H3>Cind cream un articol email automat este livrat catre @ adresa setata in .env (pentru asta va trebui setat smpt server:local sau in cazul meu am folosit smpt sendgrid ca sa monotorizez statistica in test)  </H3>
  <img src="sendgrid.png">	<img src="sendgrid.png">
+
+<H2> Installation </H2>
+
+1. git clone from repository,
+
+2. Run  "composer install" .
+
+3. Run "npm install". 
+
+4. Run "php artisan migrate"
+
+5. Redact you .env file locally  from template (.env.example);  
+
+6. Create new database and enter credential to .env  (don't forget to enter "php artisan key:generate");
+

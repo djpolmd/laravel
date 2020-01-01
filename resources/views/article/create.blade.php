@@ -58,7 +58,6 @@
                             <div class="form-group row">
                                 {!! Form::submit('Add Article', ['class' => 'btn btn-primary form-control']) !!}
                             </div>
-                    </fieldset>
                     </form>
                 </div>
             </div>
