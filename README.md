@@ -46,3 +46,7 @@ GET /articles/<articol_id><br>
 
 6. Create new database and enter credential to .env  (don't forget to enter "php artisan key:generate");
 
+
+add to env :
+MAIL_TO_EMAIL=test@test.com
+MAIL_TO_NAME=test
